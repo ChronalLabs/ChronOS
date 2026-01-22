@@ -114,6 +114,11 @@ Primary communication channels:
 
 We aim to maintain a respectful, inclusive, and beginner-friendly environment.
 
+## Contribution
+First-time contributors are welcome.
+
+
+
 ---
 
 ## License

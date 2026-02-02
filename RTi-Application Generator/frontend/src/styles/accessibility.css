@@ -1,0 +1,374 @@
+/* Accessibility (a11y) Global Styles */
+/* Include this in App.css for application-wide accessibility improvements */
+
+/* ===== FOCUS STATES ===== */
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color, #1e3a5f);
+  color: white;
+  padding: 8px 16px;
+  z-index: 9999;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 0 0 8px 0;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Global focus visible styles */
+*:focus-visible {
+  outline: 2px solid var(--primary-color, #1e3a5f);
+  outline-offset: 2px;
+}
+
+/* Remove default focus for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Enhanced focus for interactive elements */
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--primary-color, #1e3a5f);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(30, 58, 95, 0.2);
+}
+
+/* ===== SCREEN READER ONLY ===== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Make sr-only visible when focused (for skip links) */
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* ===== FORM ACCESSIBILITY ===== */
+
+/* Required field indicator */
+[aria-required="true"] + label::after,
+label:has(+ [aria-required="true"])::after {
+  content: " *";
+  color: #dc2626;
+}
+
+/* Error state for form fields */
+[aria-invalid="true"] {
+  border-color: #dc2626 !important;
+}
+
+/* Associate error messages with inputs */
+[aria-describedby] {
+  /* Ensure error messages are announced - handled by semantic HTML */
+  position: relative;
+}
+
+/* Disabled state visual feedback */
+[aria-disabled="true"],
+[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000000;
+    --text-muted: #374151;
+  }
+  
+  button,
+  input,
+  textarea,
+  select,
+  .card,
+  .panel {
+    border: 2px solid #000000;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  /* Ensure links are visually distinct */
+  a:visited {
+    color: #551a8b;
+  }
+}
+
+/* ===== FORCED COLORS (Windows High Contrast) ===== */
+
+@media (forced-colors: active) {
+  button,
+  [role="button"] {
+    border: 2px solid currentColor;
+  }
+  
+  :focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+  
+  /* Ensure icons are visible */
+  svg {
+    forced-color-adjust: auto;
+  }
+}
+
+/* ===== COLOR BLIND FRIENDLY ===== */
+
+/* Don't rely solely on color for state indication */
+.status-success::before {
+  content: "✓ ";
+}
+
+.status-error::before {
+  content: "✕ ";
+}
+
+.status-warning::before {
+  content: "⚠ ";
+}
+
+.status-info::before {
+  content: "ℹ ";
+}
+
+/* ===== TOUCH TARGETS ===== */
+
+/* Minimum touch target size (44x44 per WCAG) */
+button,
+[role="button"],
+a,
+input[type="checkbox"],
+input[type="radio"],
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* For smaller visual elements, add invisible touch area */
+.touch-target-expanded {
+  position: relative;
+}
+
+.touch-target-expanded::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* ===== TEXT ACCESSIBILITY ===== */
+
+/* Minimum readable line height */
+body {
+  line-height: 1.5;
+}
+
+/* Maximum readable line length */
+p, li, dd {
+  max-width: 75ch;
+}
+
+/* Ensure text can be resized up to 200% */
+html {
+  font-size: 100%; /* Respect user's browser settings */
+}
+
+/* Don't use viewport units for font sizes alone */
+/* Good: clamp(1rem, 2vw, 1.5rem) */
+/* Bad: font-size: 2vw */
+
+/* ===== LANDMARKS & REGIONS ===== */
+
+/* Ensure main regions are identifiable */
+header[role="banner"],
+nav[role="navigation"],
+main[role="main"],
+footer[role="contentinfo"],
+aside[role="complementary"] {
+  display: block;
+}
+
+/* ===== INTERACTIVE ELEMENTS ===== */
+
+/* Indicate loading/busy states */
+[aria-busy="true"] {
+  cursor: wait;
+}
+
+/* Expanded/collapsed states */
+[aria-expanded="false"] .expand-icon {
+  transform: rotate(0deg);
+}
+
+[aria-expanded="true"] .expand-icon {
+  transform: rotate(180deg);
+}
+
+/* Selected states */
+[aria-selected="true"] {
+  background-color: var(--primary-light, #e8f4f8);
+}
+
+[aria-current="page"] {
+  font-weight: 600;
+  border-left: 3px solid var(--primary-color, #1e3a5f);
+}
+
+/* ===== DIALOG/MODAL ACCESSIBILITY ===== */
+
+/* Trap focus within modal */
+[role="dialog"],
+[role="alertdialog"] {
+  /* Focus should be managed via JS */
+  position: fixed;
+}
+
+/* Modal backdrop should not be tabbable */
+.modal-backdrop {
+  pointer-events: auto;
+}
+
+/* ===== LIVE REGIONS ===== */
+
+/* Status messages */
+[role="status"],
+[role="alert"],
+[aria-live] {
+  /* Content will be announced by screen readers */
+  display: block;
+}
+
+/* Alert should be immediately announced */
+[role="alert"] {
+  /* aria-atomic="true" ensures entire content is read */
+  display: block;
+}
+
+/* ===== TABLES ===== */
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Ensure data cells are associated with headers */
+th[scope] {
+  /* Good practice: use scope="col" or scope="row" */
+  font-weight: 600;
+}
+
+/* ===== IMAGES & ICONS ===== */
+
+/* Decorative images */
+img[alt=""],
+[role="presentation"],
+[aria-hidden="true"] {
+  /* Hidden from assistive tech */
+  user-select: none;
+}
+
+/* Icon buttons need labels */
+button:has(> svg:only-child) {
+  /* Should have aria-label */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== KEYBOARD NAVIGATION ===== */
+
+/* Keyboard-only styles */
+.keyboard-user *:focus {
+  outline: 3px solid var(--primary-color, #1e3a5f);
+  outline-offset: 2px;
+}
+
+/* Tab order indicator (development only) */
+/* .debug-tabindex [tabindex]::after {
+  content: " [" attr(tabindex) "]";
+  font-size: 10px;
+  color: red;
+} */
+
+/* ===== UTILITY CLASSES ===== */
+
+/* Hide visually but keep for screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus trap container */
+.focus-trap {
+  /* Managed via JS - focus stays within this container */
+  position: relative;
+}
+
+/* Announce text changes to screen readers */
+.live-region {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}

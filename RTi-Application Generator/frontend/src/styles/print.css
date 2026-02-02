@@ -1,0 +1,384 @@
+/* Print-Friendly Styles for Draft Preview */
+/* Include this file in App.css or import in DraftPreview component */
+
+@media print {
+  /* Reset and base */
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* Page setup */
+  @page {
+    size: A4;
+    margin: 20mm 15mm;
+  }
+  
+  /* Hide non-essential elements */
+  .sidebar,
+  .navbar,
+  .header,
+  .footer,
+  .navigation,
+  .download-panel,
+  .confidence-notice,
+  .quality-score,
+  .explain-why-panel,
+  .privacy-controls,
+  .draft-history-panel,
+  .pii-warning,
+  .character-limit-indicator,
+  .btn,
+  button,
+  .form-actions,
+  .tabs,
+  .tab-navigation,
+  .language-switch,
+  .theme-toggle,
+  .edit-controls,
+  .action-buttons,
+  .modal,
+  .tooltip,
+  .toast,
+  .notification {
+    display: none !important;
+  }
+  
+  /* Body reset */
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: black;
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  /* Main content area */
+  .main-content,
+  .content-area,
+  .draft-preview,
+  .draft-content {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+    border: none !important;
+  }
+  
+  /* RTI/Complaint Document Styling */
+  .draft-document {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    line-height: 1.8;
+    color: black;
+  }
+  
+  /* Document Header */
+  .document-header {
+    text-align: center;
+    margin-bottom: 24pt;
+    padding-bottom: 12pt;
+    border-bottom: 2pt solid black;
+  }
+  
+  .document-header h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    margin: 0 0 8pt 0;
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+  }
+  
+  .document-header .subtitle {
+    font-size: 11pt;
+    font-style: italic;
+  }
+  
+  /* Reference Number & Date */
+  .document-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16pt;
+    font-size: 11pt;
+  }
+  
+  .reference-number,
+  .document-date {
+    font-weight: bold;
+  }
+  
+  /* Address Block */
+  .address-block {
+    margin-bottom: 20pt;
+  }
+  
+  .address-block .label {
+    font-weight: bold;
+    margin-bottom: 4pt;
+  }
+  
+  .address-block .content {
+    padding-left: 0;
+    white-space: pre-line;
+  }
+  
+  /* Subject Line */
+  .subject-line {
+    margin: 20pt 0;
+    font-weight: bold;
+  }
+  
+  .subject-line .label {
+    text-decoration: underline;
+  }
+  
+  /* Salutation */
+  .salutation {
+    margin-bottom: 16pt;
+  }
+  
+  /* Main Body */
+  .document-body {
+    text-align: justify;
+    margin-bottom: 24pt;
+  }
+  
+  .document-body p {
+    margin: 0 0 12pt 0;
+    text-indent: 24pt;
+  }
+  
+  .document-body p:first-child {
+    text-indent: 0;
+  }
+  
+  /* Legal References */
+  .legal-reference {
+    font-style: italic;
+    background: none !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+  
+  /* Numbered Points */
+  .numbered-points {
+    margin: 16pt 0;
+    padding-left: 24pt;
+  }
+  
+  .numbered-points li {
+    margin-bottom: 8pt;
+    page-break-inside: avoid;
+  }
+  
+  /* Information Sought Section */
+  .information-section {
+    margin: 20pt 0;
+    padding: 12pt;
+    border: 1pt solid black;
+    page-break-inside: avoid;
+  }
+  
+  .information-section h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 0 0 8pt 0;
+    text-decoration: underline;
+  }
+  
+  /* Fee Section */
+  .fee-section {
+    margin: 16pt 0;
+    font-style: italic;
+  }
+  
+  /* Closing */
+  .closing {
+    margin-top: 32pt;
+  }
+  
+  .closing .regards {
+    margin-bottom: 8pt;
+  }
+  
+  .closing .signature-space {
+    height: 48pt;
+    border-bottom: 1pt solid black;
+    width: 200pt;
+    margin: 16pt 0;
+  }
+  
+  .closing .applicant-name {
+    font-weight: bold;
+    margin-bottom: 4pt;
+  }
+  
+  .closing .applicant-details {
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+  
+  /* Attachments List */
+  .attachments {
+    margin-top: 24pt;
+    padding-top: 12pt;
+    border-top: 1pt solid black;
+    page-break-inside: avoid;
+  }
+  
+  .attachments h4 {
+    font-size: 11pt;
+    font-weight: bold;
+    margin: 0 0 8pt 0;
+  }
+  
+  .attachments ol {
+    margin: 0;
+    padding-left: 20pt;
+  }
+  
+  .attachments li {
+    margin-bottom: 4pt;
+    font-size: 10pt;
+  }
+  
+  /* Page Break Control */
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+  }
+  
+  p, li, .address-block, .information-section {
+    page-break-inside: avoid;
+  }
+  
+  .page-break {
+    page-break-before: always;
+  }
+  
+  /* Links */
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+  
+  a[href]::after {
+    content: none !important;
+  }
+  
+  /* Tables if any */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 16pt 0;
+  }
+  
+  th, td {
+    border: 1pt solid black;
+    padding: 6pt 8pt;
+    text-align: left;
+  }
+  
+  th {
+    background: #f0f0f0 !important;
+    font-weight: bold;
+  }
+  
+  /* Draft watermark - optional */
+  .draft-watermark::after {
+    content: "DRAFT";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 72pt;
+    color: rgba(0, 0, 0, 0.05);
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  /* Official Copy marker */
+  .official-copy::before {
+    content: "OFFICIAL COPY";
+    display: block;
+    text-align: center;
+    font-size: 10pt;
+    font-weight: bold;
+    margin-bottom: 16pt;
+    padding: 4pt;
+    border: 1pt solid black;
+  }
+}
+
+/* Print Preview Mode (on-screen) */
+.print-preview {
+  background: #f5f5f5;
+  padding: 40px;
+  min-height: 100vh;
+}
+
+.print-preview .document-container {
+  max-width: 210mm; /* A4 width */
+  min-height: 297mm; /* A4 height */
+  margin: 0 auto;
+  padding: 20mm 15mm;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12pt;
+  line-height: 1.8;
+  color: black;
+}
+
+/* Print button styles */
+.print-actions {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  z-index: 100;
+}
+
+.print-actions button {
+  padding: 12px 24px;
+  background: var(--primary-color, #1e3a5f);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s ease;
+}
+
+.print-actions button:hover {
+  background: var(--primary-dark, #152a47);
+}
+
+@media print {
+  .print-preview {
+    background: white;
+    padding: 0;
+  }
+  
+  .print-preview .document-container {
+    box-shadow: none;
+    max-width: none;
+    min-height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .print-actions {
+    display: none !important;
+  }
+}

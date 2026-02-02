@@ -1,0 +1,46 @@
+To,
+The Public Information Officer,
+{DEPARTMENT_NAME}
+{DEPARTMENT_ADDRESS}
+
+Subject: Application for Inspection of Records/Works under Section 2(j) of RTI Act, 2005
+
+Respected Sir/Madam,
+
+I, {APPLICANT_NAME}, a citizen of India, resident of {APPLICANT_ADDRESS}, hereby submit this application under Section 6(1) read with Section 2(j)(ii) of the Right to Information Act, 2005, seeking permission to inspect the following records/documents/works:
+
+RECORDS/WORKS TO BE INSPECTED:
+{INFORMATION_REQUESTED}
+
+PURPOSE OF INSPECTION:
+To verify and examine the records/works in public interest and for transparency.
+
+PREFERRED SCHEDULE:
+{TIME_PERIOD}
+
+I hereby state that:
+1. I am a citizen of India.
+2. The inspection is sought for legitimate purposes under the RTI Act.
+3. I shall abide by the rules and regulations during inspection.
+4. I am willing to pay any applicable inspection charges.
+
+FEE DETAILS:
+- Application Fee: Rs. 10/- (enclosed via {PAYMENT_MODE})
+- Inspection Fee: As prescribed by the State/Central Government
+
+As per Section 2(j)(ii) of the RTI Act, 2005, right to information includes the right to inspect works, documents, and records. I request that permission for inspection be granted within 30 days and I be informed of the scheduled date, time, and venue.
+
+In case any documents need to be excluded from inspection under Section 8 or 9, please provide reasons in writing.
+
+Thanking you,
+
+Yours faithfully,
+
+{APPLICANT_NAME}
+{APPLICANT_ADDRESS}
+{APPLICANT_CONTACT}
+
+Date: {DATE}
+Place: {PLACE}
+
+Enclosure: Application fee of Rs. 10/- via {PAYMENT_MODE}

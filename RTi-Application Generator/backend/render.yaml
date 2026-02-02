@@ -1,0 +1,56 @@
+# Render Blueprint - Backend Deployment Configuration
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: rti-complaint-generator-api
+    env: python
+    region: oregon  # or singapore for India-closer latency
+    plan: free  # Change to 'starter' or higher for production
+    buildCommand: "./build.sh"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /health
+    envVars:
+      # Server Configuration
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: false
+      - key: LOG_LEVEL
+        value: INFO
+      
+      # CORS - Update with your Vercel frontend URL
+      - key: CORS_ORIGINS
+        value: '["https://your-app-name.vercel.app","http://localhost:3000"]'
+      
+      # NLP Configuration
+      - key: SPACY_MODEL
+        value: en_core_web_sm
+      - key: ENABLE_DISTILBERT
+        value: true
+      
+      # Confidence Thresholds
+      - key: CONFIDENCE_HIGH
+        value: "0.9"
+      - key: CONFIDENCE_MEDIUM
+        value: "0.7"
+      - key: CONFIDENCE_LOW
+        value: "0.5"
+      
+      # Rate Limiting
+      - key: RATE_LIMIT_ENABLED
+        value: true
+      - key: RATE_LIMIT_REQUESTS
+        value: "100"
+      - key: RATE_LIMIT_WINDOW_SECONDS
+        value: "60"
+      
+      # OpenAI (Optional - Add in Render Dashboard for security)
+      # - key: OPENAI_API_KEY
+      #   sync: false  # Set manually in dashboard
+      
+      # Feature Flags
+      - key: FEATURE_HINDI_SUPPORT
+        value: true
+      - key: FEATURE_LLM_ASSIST
+        value: true

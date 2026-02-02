@@ -1,0 +1,48 @@
+To,
+{AUTHORITY_DESIGNATION}
+{DEPARTMENT_NAME}
+{DEPARTMENT_ADDRESS}
+
+Subject: Follow-up / Reminder on Pending Grievance - Reference: {REFERENCE_NUMBER}
+
+Respected Sir/Madam,
+
+I, {APPLICANT_NAME}, a resident of {APPLICANT_ADDRESS}, am writing to follow up on my grievance/complaint submitted earlier, the details of which are as follows:
+
+1. REFERENCE DETAILS:
+   - Complaint/Reference Number: {REFERENCE_NUMBER}
+   - Date of Original Submission: {START_DATE}
+   - Mode of Submission: {SUBMISSION_MODE}
+
+2. BRIEF SUMMARY OF ORIGINAL COMPLAINT:
+{GRIEVANCE_DESCRIPTION}
+
+3. TIME ELAPSED:
+It has been {PROBLEM_DURATION} since I submitted my complaint, and I have not received any substantive update or resolution.
+
+4. CURRENT STATUS (as known to me):
+{PREVIOUS_ATTEMPTS}
+
+5. REQUEST:
+I kindly request you to:
+- Provide the current status of my complaint
+- Inform me of the expected timeline for resolution
+- Share the name/contact of the officer handling my case
+- Take necessary steps to expedite the matter
+
+I understand that your office handles numerous complaints and appreciate your efforts. However, the delay is causing inconvenience, and I would be grateful for an early resolution.
+
+I may be contacted at the address/phone number provided below for any clarification or additional information.
+
+Thanking you in anticipation of a prompt response.
+
+Yours faithfully,
+
+{APPLICANT_NAME}
+{APPLICANT_ADDRESS}
+{APPLICANT_CONTACT}
+
+Date: {DATE}
+Place: {PLACE}
+
+Reference: Original complaint dated {START_DATE}

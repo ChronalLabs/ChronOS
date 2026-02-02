@@ -1,0 +1,43 @@
+To,
+The Public Information Officer,
+{DEPARTMENT_NAME}
+{DEPARTMENT_ADDRESS}
+
+Subject: Application for Certified Copies of Records/Documents under RTI Act, 2005
+
+Respected Sir/Madam,
+
+I, {APPLICANT_NAME}, a citizen of India, resident of {APPLICANT_ADDRESS}, hereby submit this application under Section 6(1) read with Section 2(j) of the Right to Information Act, 2005, requesting certified copies of the following official records/documents:
+
+DOCUMENTS/RECORDS REQUESTED:
+{INFORMATION_REQUESTED}
+
+PERIOD/REFERENCE:
+{TIME_PERIOD}
+
+I hereby state that:
+1. I am a citizen of India.
+2. The documents/records requested are held by or under the control of your Public Authority.
+3. I am willing to pay the prescribed charges for photocopying/certification as per RTI Rules.
+
+FEE DETAILS:
+- Application Fee: Rs. 10/- (enclosed via {PAYMENT_MODE})
+- Photocopying Charges: As applicable @ Rs. 2/- per page (A4/A3)
+- Certification Charges: As prescribed
+
+As per Section 7(1) of the RTI Act, 2005, I request that the certified copies be provided within 30 days from the date of receipt of this application. In case additional fees are required, please intimate the same.
+
+If the information requested pertains to another Public Authority, kindly transfer this application under Section 6(3) and inform me accordingly.
+
+Thanking you,
+
+Yours faithfully,
+
+{APPLICANT_NAME}
+{APPLICANT_ADDRESS}
+{APPLICANT_CONTACT}
+
+Date: {DATE}
+Place: {PLACE}
+
+Enclosure: Application fee of Rs. 10/- via {PAYMENT_MODE}

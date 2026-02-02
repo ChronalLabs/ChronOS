@@ -1,0 +1,20 @@
+# ML Requirements
+# These packages are used by the ML components
+
+# ===================
+# Core ML/NLP
+# ===================
+spacy>=3.7.0
+transformers>=4.36.0
+torch>=2.1.0
+numpy>=1.26.0
+
+# ===================
+# spaCy Model
+# ===================
+# Install with: python -m spacy download en_core_web_sm
+
+# ===================
+# Utilities
+# ===================
+scikit-learn>=1.3.0

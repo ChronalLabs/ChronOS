@@ -1,0 +1,254 @@
+/* Character Limit Indicator Styles */
+.character-limit-indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.75rem;
+  margin-top: 6px;
+}
+
+/* Progress Bar */
+.progress-container {
+  position: relative;
+  height: 4px;
+  background: var(--border-color, #e5e7eb);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--primary-color, #1e3a5f);
+  border-radius: 2px;
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.progress-overflow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: #dc2626;
+  border-radius: 0 2px 2px 0;
+  transition: width 0.2s ease;
+}
+
+/* Status-based progress colors */
+.character-limit-indicator.normal .progress-bar {
+  background: var(--primary-color, #1e3a5f);
+}
+
+.character-limit-indicator.below-min .progress-bar {
+  background: #3b82f6;
+}
+
+.character-limit-indicator.warning .progress-bar {
+  background: #f59e0b;
+}
+
+.character-limit-indicator.danger .progress-bar {
+  background: #ef4444;
+}
+
+.character-limit-indicator.exceeded .progress-bar {
+  background: #dc2626;
+}
+
+/* Content Area */
+.indicator-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Count Display */
+.count-display {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.count-display .current {
+  font-weight: 600;
+  color: var(--text-primary, #374151);
+  transition: color 0.2s ease;
+}
+
+.count-display .separator {
+  color: var(--text-muted, #9ca3af);
+}
+
+.count-display .max {
+  color: var(--text-muted, #9ca3af);
+}
+
+/* Status-based count colors */
+.count-display .current.normal {
+  color: var(--text-primary, #374151);
+}
+
+.count-display .current.below-min {
+  color: #3b82f6;
+}
+
+.count-display .current.warning {
+  color: #d97706;
+}
+
+.count-display .current.danger {
+  color: #dc2626;
+}
+
+.count-display .current.exceeded {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+/* Message */
+.message {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-muted, #6b7280);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message svg {
+  flex-shrink: 0;
+}
+
+/* Status-based message colors */
+.character-limit-indicator.normal .message {
+  color: var(--text-muted, #6b7280);
+}
+
+.character-limit-indicator.normal .message svg {
+  color: var(--success-color, #10b981);
+}
+
+.character-limit-indicator.below-min .message {
+  color: #3b82f6;
+}
+
+.character-limit-indicator.below-min .message svg {
+  color: #3b82f6;
+}
+
+.character-limit-indicator.warning .message {
+  color: #d97706;
+}
+
+.character-limit-indicator.warning .message svg {
+  color: #f59e0b;
+}
+
+.character-limit-indicator.danger .message {
+  color: #dc2626;
+}
+
+.character-limit-indicator.danger .message svg {
+  color: #ef4444;
+}
+
+.character-limit-indicator.exceeded .message {
+  color: #b91c1c;
+  font-weight: 500;
+}
+
+.character-limit-indicator.exceeded .message svg {
+  color: #dc2626;
+}
+
+/* Animation for status changes */
+@keyframes pulse-warning {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.character-limit-indicator.danger .message,
+.character-limit-indicator.exceeded .message {
+  animation: pulse-warning 1.5s ease-in-out infinite;
+}
+
+/* Compact variant */
+.character-limit-indicator.compact {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.character-limit-indicator.compact .progress-container {
+  flex: 1;
+  height: 3px;
+}
+
+.character-limit-indicator.compact .indicator-content {
+  flex-shrink: 0;
+}
+
+/* Without progress bar */
+.character-limit-indicator:not(:has(.progress-container)) .indicator-content {
+  justify-content: flex-end;
+}
+
+/* Focus state for accessibility */
+.character-limit-indicator:focus {
+  outline: 2px solid var(--primary-color, #1e3a5f);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .progress-bar {
+    border: 1px solid currentColor;
+  }
+  
+  .count-display .current.warning,
+  .count-display .current.danger,
+  .count-display .current.exceeded {
+    text-decoration: underline;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar,
+  .count-display .current,
+  .message {
+    transition: none;
+  }
+  
+  .character-limit-indicator.danger .message,
+  .character-limit-indicator.exceeded .message {
+    animation: none;
+  }
+}
+
+/* Print - Simplify */
+@media print {
+  .character-limit-indicator {
+    display: none !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .indicator-content {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+  
+  .message {
+    font-size: 0.7rem;
+  }
+}

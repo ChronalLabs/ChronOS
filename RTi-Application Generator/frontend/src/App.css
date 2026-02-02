@@ -1,0 +1,83 @@
+/* Global App Styles */
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Primary Action: Orange */
+.btn-primary {
+  background-color: var(--color-brand-orange);
+  color: white;
+  border-color: var(--color-brand-orange);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(234, 88, 12, 0.2); /* Orange shadow */
+}
+
+/* Secondary Action: Navy Outline */
+.btn-outline {
+  background-color: white;
+  color: var(--color-brand-navy);
+  border-color: var(--color-border);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-brand-navy);
+  background-color: var(--color-bg-subtle);
+}
+
+/* Tertiary/Ghost */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+}
+
+.btn-ghost:hover {
+  color: var(--color-brand-orange);
+  background-color: var(--color-brand-orange-light);
+}
+
+/* Success */
+.btn-success {
+  background-color: var(--color-success);
+  color: white;
+}
+
+/* Form Elements Reset */
+input, select, textarea {
+  font-family: var(--font-sans);
+}
+
+/* Utility */
+.text-center { text-align: center; }
+.mt-4 { margin-top: 1rem; }
+.mb-4 { margin-bottom: 1rem; }

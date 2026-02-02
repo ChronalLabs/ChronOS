@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="dashboard">
+  <h1 class="page-title">Expense Insight & Budget Coach</h1>
+  <p class="page-subtitle">Track spending. Stay in control.</p>
+
+  <div class="row g-4 mt-4">
+    <div class="col-md-4">
+      <div class="card stat-card">
+        <div class="card-body">
+          <p class="stat-label">Total Spent</p>
+          <h2>₹{{ total_spent }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card stat-card">
+        <div class="card-body">
+          <p class="stat-label">Monthly Budget</p>
+          <h2>₹{{ monthly_budget }}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card stat-card">
+        <div class="card-body">
+          <p class="stat-label">Remaining</p>
+          <h2 class="{{ 'text-danger' if remaining < 0 else '' }}">₹{{ remaining }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include 'add_expense.html' %}
+
+  <section class="expense-list mt-5">
+    <h3>Recent Expenses</h3>
+    <ul class="list-group mt-3">
+      {% for e in expenses %}
+      <li class="list-group-item d-flex justify-content-between">
+        <div>
+          <strong>{{ e.category }}</strong>
+          <small class="text-muted d-block">{{ e.note }}</small>
+        </div>
+        <span>₹{{ e.amount }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {% include 'insights.html' %}
+
+  <section class="charts mt-5">
+    <h3>Charts</h3>
+    <canvas id="categoryChart"></canvas>
+    <canvas id="budgetChart" class="mt-4"></canvas>
+  </section>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const chartData = {{ chart_data|tojson }};
+  const categories = Object.keys(chartData);
+  const amounts = Object.values(chartData);
+
+  const ctx1 = document.getElementById('categoryChart');
+  new Chart(ctx1, {
+      type: 'bar',
+      data: {
+          labels: categories,
+          datasets: [{
+              label: 'Spending by Category',
+              data: amounts,
+              backgroundColor: 'rgba(54, 162, 235, 0.6)'
+          }]
+      },
+      options: { responsive: true }
+  });
+
+  const totalSpent = {{ total_spent }};
+  const monthlyBudget = {{ monthly_budget }};
+  const remaining = monthlyBudget - totalSpent;
+
+  const ctx2 = document.getElementById('budgetChart');
+  new Chart(ctx2, {
+      type: 'doughnut',
+      data: {
+          labels: ['Spent', 'Remaining'],
+          datasets: [{
+              data: [totalSpent, remaining > 0 ? remaining : 0],
+              backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(75, 192, 192, 0.6)']
+          }]
+      },
+      options: { responsive: true }
+  });
+</script>
+
+{% endblock %}

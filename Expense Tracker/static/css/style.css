@@ -1,0 +1,49 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #111;
+  }
+  
+  .main-container {
+    max-width: 900px;
+    padding-top: 40px;
+  }
+  
+  .page-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+  
+  .page-subtitle {
+    color: #666;
+  }
+  
+  .stat-card {
+    border: none;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    border-radius: 16px;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  .add-expense input {
+    border-radius: 10px;
+  }
+  
+  .list-group-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .nav-link {
+    color: #111;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  

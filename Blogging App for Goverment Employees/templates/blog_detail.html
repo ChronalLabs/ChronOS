@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ blog.title }} | GovBlog</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: rgba(0, 0, 0, 0.55);
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            font-size: 14px;
+            color: #cccccc;
+            margin-bottom: 25px;
+        }
+
+        .content {
+            line-height: 1.7;
+            font-size: 17px;
+            margin-bottom: 40px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #ff79c6;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            text-decoration: underline;
+        }
+
+        /* COMMENTS */
+        .comments {
+            margin-top: 40px;
+        }
+
+        .comments h2 {
+            margin-bottom: 15px;
+        }
+
+        .comment {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .comment-date {
+            font-size: 12px;
+            color: #bbbbbb;
+            margin-bottom: 8px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 90px;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            resize: vertical;
+            font-size: 14px;
+        }
+
+        button {
+            margin-top: 10px;
+            background: #ff79c6;
+            color: #000;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .login-msg {
+            margin-top: 15px;
+            color: #ffb86c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <a class="back" href="/">← Back to Home</a>
+
+    <h1>{{ blog.title }}</h1>
+
+    <div class="meta">
+        By <strong>{{ blog.author }}</strong> •
+        {{ blog.created_at.strftime("%d %b %Y, %I:%M %p") }}
+    </div>
+
+    <div class="content">
+        {{ blog.content }}
+    </div>
+
+
+    {% if employee and employee.name == blog.author %}
+<div style="margin-top:20px;">
+    <a href="/blog/{{ blog.id }}/edit"
+       style="padding:8px 12px; background:#2563eb; color:white; text-decoration:none; border-radius:6px;">
+        ✏️ Edit
+    </a>
+
+    <form action="/blog/{{ blog.id }}/delete" method="post" style="display:inline;">
+        <button type="submit"
+                onclick="return confirm('Delete this blog?')"
+                style="padding:8px 12px; background:#dc2626; color:white; border:none; border-radius:6px; cursor:pointer;">
+            🗑 Delete
+        </button>
+    </form>
+</div>
+{% endif %}
+
+
+    <div class="comments">
+        <h2>Comments</h2>
+
+        {% if comments %}
+            {% for comment in comments %}
+                <div class="comment">
+                    <div class="comment-author">
+                        {{ comment.author }}
+                    </div>
+                    <div class="comment-date">
+                        {{ comment.created_at.strftime("%d %b %Y, %I:%M %p") }}
+                    </div>
+                    <div>
+                        {{ comment.content }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No comments yet. Be the first to comment!</p>
+        {% endif %}
+    </div>
+
+    {% if employee %}
+        <form method="post" action="/blog/{{ blog.id }}/comment">
+            <textarea name="content" required placeholder="Write your comment..."></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+    {% else %}
+        <p class="login-msg">
+            You must <a href="/login" style="color:#ff79c6;">login</a> to comment.
+        </p>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

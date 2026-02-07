@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Blog</title>
+</head>
+<body style="font-family:Arial; background:#f3f4f6; padding:40px;">
+
+<h2>Edit Blog</h2>
+
+<form method="post" style="max-width:600px;">
+    <input type="text"
+           name="title"
+           value="{{ blog.title }}"
+           required
+           style="width:100%; padding:10px; margin-bottom:10px;">
+
+    <textarea name="content"
+              rows="10"
+              required
+              style="width:100%; padding:10px; margin-bottom:10px;">{{ blog.content }}</textarea>
+
+    <button type="submit"
+            style="padding:10px 16px; background:#16a34a; color:white; border:none; border-radius:6px;">
+        💾 Save Changes
+    </button>
+
+    <a href="/blog/{{ blog.id }}"
+       style="margin-left:10px; text-decoration:none;">
+        Cancel
+    </a>
+</form>
+
+</body>
+</html>

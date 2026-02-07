@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | GovBlog</title>
+</head>
+<body style="
+  margin:0;
+  font-family: system-ui, sans-serif;
+  background: radial-gradient(circle at top, #1a1f2b, #0b0e14);
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+">
+
+<div style="
+  width:420px;
+  background:#0f1320;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.6);
+">
+
+  <h2 style="text-align:center; margin-bottom:20px;">📝 Government Employee Registration</h2>
+
+  <form method="post">
+
+    <input name="name" placeholder="Full Name" required
+      style="width:100%; padding:12px; margin-bottom:12px; border-radius:8px; border:none; background:#1c2233; color:#fff;">
+
+    <input name="username" placeholder="Username" required
+      style="width:100%; padding:12px; margin-bottom:12px; border-radius:8px; border:none; background:#1c2233; color:#fff;">
+
+    <input name="email" type="email" placeholder="Email" required
+      style="width:100%; padding:12px; margin-bottom:12px; border-radius:8px; border:none; background:#1c2233; color:#fff;">
+
+    <input name="contact" placeholder="Contact Number" required
+      style="width:100%; padding:12px; margin-bottom:12px; border-radius:8px; border:none; background:#1c2233; color:#fff;">
+
+    <input name="sector" placeholder="Government Sector (e.g. Health)" required
+      style="width:100%; padding:12px; margin-bottom:12px; border-radius:8px; border:none; background:#1c2233; color:#fff;">
+
+    <input name="position" placeholder="Position / Designation" required
+      style="width:100%; padding:12px; margin-bottom:18px; border-radius:8px; border:none; background:#1c2233; color:#fff;">
+
+    <input name="password" type="password" placeholder="Password" required
+      style="width:100%; padding:12px; margin-bottom:20px; border-radius:8px; border:none; background:#1c2233; color:#fff;">
+
+    <button type="submit"
+      style="
+        width:100%;
+        padding:12px;
+        border:none;
+        border-radius:10px;
+        background:linear-gradient(135deg,#6ef3c5,#4dd6ff);
+        font-weight:600;
+        cursor:pointer;
+      ">
+      Register
+    </button>
+
+  </form>
+
+  <p style="text-align:center; margin-top:14px; font-size:14px;">
+    Already registered?
+    <a href="/login" style="color:#4dd6ff;">Login</a>
+  </p>
+
+</div>
+</body>
+</html>

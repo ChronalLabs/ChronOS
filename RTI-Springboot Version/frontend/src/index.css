@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-indigo-deep: #0F172A;
+  --color-saffron: #F59E0B;
+  --color-saffron-light: #FBBF24;
+  --color-teal: #0EA5A4;
+  --color-gray-warm: #F3F4F6;
+  --color-paper: #FFF8F1;
+  --color-green-light: #4ADE80;
+  /* Requested Impressive Light Green */
+
+  --font-sans: 'Outfit', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  --shadow-paper: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-lift: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@layer base {
+  body {
+    /* mapped to --color-gray-warm */
+    @apply font-sans bg-gray-warm text-slate-800 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@utility bg-grain {
+  background-color: #F3F4F6;
+  /* background-image: ... (simplified for build stability) */
+}

@@ -1,79 +1,171 @@
-# Contributor Covenant Code of Conduct
+# Code of Conduct
+## ChronalLabs Open Source Community
 
-## Our Pledge
+### Our Commitment
 
-We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+ChronalLabs is committed to fostering an open, inclusive, respectful, and harassment-free community for everyone.  
 
-We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+We believe that strong open-source communities are built on professionalism, empathy, accountability, and mutual respect.
 
-## Our Standards
+All participants — including contributors, mentors, maintainers, reviewers, and users — are expected to uphold this Code of Conduct in all community interactions.
 
-Examples of behavior that contributes to a positive environment for our community include:
+This includes, but is not limited to:
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
-* Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the overall community
+- GitHub repositories
+- Issue discussions
+- Pull request reviews
+- Chat platforms
+- Community calls
+- Social media interactions related to the project
+- Google Summer of Code communications
 
-Examples of unacceptable behavior include:
+---
 
-* The use of sexualized language or imagery, and sexual attention or advances of any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a professional setting
+# Our Standards
 
-## Enforcement Responsibilities
+We expect all community members to:
 
-Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+## 1. Be Respectful
 
-Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+- Treat others with dignity and respect.
+- Use welcoming and inclusive language.
+- Be constructive when providing feedback.
+- Assume good intentions.
 
-## Scope
+## 2. Be Professional
 
-This Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+- Focus on technical merit and project goals.
+- Avoid personal attacks or inflammatory language.
+- Keep discussions relevant and solution-oriented.
 
-## Enforcement
+## 3. Be Collaborative
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at [INSERT EMAIL ADDRESS]. All complaints will be reviewed and investigated promptly and fairly.
+- Encourage new contributors.
+- Provide helpful guidance where possible.
+- Share knowledge openly.
+- Support mentorship efforts.
 
-All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+## 4. Be Accountable
 
-## Enforcement Guidelines
+- Accept constructive feedback gracefully.
+- Acknowledge mistakes when they occur.
+- Work toward resolution when conflicts arise.
 
-Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+---
 
-### 1. Correction
+# Unacceptable Behavior
 
-**Community Impact**: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.
+The following behaviors are not tolerated within ChronalLabs:
 
-**Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+- Harassment of any kind
+- Discrimination based on race, ethnicity, gender, identity, religion, disability, or background
+- Sexual harassment or inappropriate language
+- Personal attacks or insults
+- Public shaming
+- Doxxing or sharing private information without consent
+- Trolling, sustained disruption, or bad-faith engagement
+- Intimidation or threats
+- Plagiarism or intentional misrepresentation of work
+- Repeated disregard for community guidelines
 
-### 2. Warning
+This applies in both public and private interactions related to the organization.
 
-**Community Impact**: A violation through a single incident or series of actions.
+---
 
-**Consequence**: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
+# Conflict Resolution
 
-### 3. Temporary Ban
+We encourage direct and respectful communication when disagreements arise.
 
-**Community Impact**: A serious violation of community standards, including sustained inappropriate behavior.
+If a conflict cannot be resolved between participants:
 
-**Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
+1. Contact a maintainer or designated community moderator.
+2. Provide a factual summary of the issue.
+3. Allow moderators to review and mediate fairly.
 
-### 4. Permanent Ban
+All reports will be handled:
 
-**Community Impact**: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.
+- Confidentially where possible
+- Impartially
+- Promptly
+- Without retaliation
 
-**Consequence**: A permanent ban from any sort of public interaction within the community.
+Retaliation against anyone who reports a concern is strictly prohibited.
 
-## Attribution
+---
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.0, available at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
+# Enforcement Guidelines
 
-Community Impact Guidelines were inspired by [Mozilla's code of conduct enforcement ladder](https://github.com/mozilla/diversity).
+Depending on the severity of the violation, actions may include:
 
-[homepage]: https://www.contributor-covenant.org
+- Informal warning
+- Formal written warning
+- Temporary suspension from communication channels
+- Removal of contributor privileges
+- Permanent ban from the organization
 
-For answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations.
+Decisions will be made by the maintainers in good faith and in alignment with community safety and fairness.
+
+---
+
+# Google Summer of Code Participants
+
+GSoC contributors and mentors are expected to maintain the highest standards of professionalism.
+
+This includes:
+
+- Meeting deadlines responsibly
+- Maintaining respectful communication
+- Engaging constructively during evaluations
+- Following documentation and code quality standards
+
+Failure to adhere to community standards may result in removal from the GSoC project in addition to internal community actions.
+
+---
+
+# Scope
+
+This Code of Conduct applies to:
+
+- All project repositories
+- Official communication channels
+- GSoC interactions
+- Events organized under ChronalLabs
+- Public representation of the organization
+
+When an individual is representing ChronalLabs in any capacity, this Code applies.
+
+---
+
+# Reporting Guidelines
+
+If you experience or witness behavior that violates this Code of Conduct:
+
+- Contact the maintainers via official repository contact channels.
+- Provide as much detail as possible.
+- Reports will remain confidential to the extent feasible.
+
+We take all concerns seriously and commit to fair review.
+
+---
+
+# Commitment to Growth
+
+ChronalLabs is an evolving organization.
+
+We are committed to:
+
+- Learning from incidents
+- Improving community processes
+- Encouraging healthy discussion
+- Creating safe contribution pathways
+
+We believe that strong communities require active stewardship.
+
+---
+
+# Acknowledgment
+
+By participating in ChronalLabs projects, you agree to uphold this Code of Conduct and contribute to a respectful, inclusive, and professional environment.
+
+ChronalLabs  
+Open Civic Technology • Responsible Innovation • Structured Collaboration

@@ -1,0 +1,86 @@
+:root {
+  /* ===== COLOR SYSTEM: Modern Civic (Warm & Authoritative) ===== */
+  
+  /* BRAND COLORS */
+  --color-brand-orange: #EA580C;   /* Orange 600 - The "Action" color */
+  --color-brand-orange-light: #FFF7ED; /* Orange 50 - Backgrounds */
+  --color-brand-navy: #0F172A;     /* Slate 900 - The "Authority" color */
+  
+  /* TEXT */
+  --color-text-primary: #1C1917;   /* Stone 900 - Warm Black */
+  --color-text-secondary: #57534E; /* Stone 600 - Warm Grey */
+  --color-text-tertiary: #A8A29E;  /* Stone 400 */
+  --color-text-inverse: #FFFFFF;
+
+  /* BACKGROUNDS */
+  --color-bg: #FAFAF9;             /* Stone 50 - Warm Paper */
+  --color-bg-card: #FFFFFF;
+  --color-bg-subtle: #F5F5F4;      /* Stone 100 */
+  --color-bg-accent: #FFF7ED;      /* Orange 50 */
+  
+  /* MAPPING TO FUNCTIONAL NAMES */
+  --color-primary: var(--color-brand-orange);
+  --color-primary-hover: #C2410C;  /* Orange 700 */
+  --color-accent: var(--color-brand-navy);
+  
+  --color-border: #E7E5E4;         /* Stone 200 */
+  --color-border-hover: #D6D3D1;   /* Stone 300 */
+  
+  /* STATUS */
+  --color-success: #15803D;
+  --color-warning: #B45309;
+  --color-error: #BE123C;
+
+  /* ===== TYPOGRAPHY ===== */
+  --font-serif: "IBM Plex Serif", "Georgia", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Headings */
+  --h1-size: 2.5rem;
+  --h1-line-height: 1.2;
+  --h2-size: 2rem;
+  --h2-line-height: 1.25;
+  --h3-size: 1.5rem;
+
+  /* ===== SPACING ===== */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 5rem;
+
+  /* ===== UI TOKENS ===== */
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  
+  /* Modern "Float" Shadows (Not brutal, not flat) */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-float: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-brand-navy);
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin-bottom: var(--spacing-lg);
+  max-width: 70ch;
+}

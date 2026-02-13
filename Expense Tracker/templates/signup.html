@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="auth-section mt-5">
+  <h2>Sign Up</h2>
+  <form method="POST" class="mt-3">
+    <div class="mb-3">
+      <input type="text" name="name" class="form-control" placeholder="Name" required>
+    </div>
+    <div class="mb-3">
+      <input type="email" name="email" class="form-control" placeholder="Email" required>
+    </div>
+    <div class="mb-3">
+      <input type="password" name="password" class="form-control" placeholder="Password" required>
+    </div>
+    <button type="submit" class="btn btn-dark w-100">Sign Up</button>
+  </form>
+  <p class="mt-3">Already have an account? <a href="/login">Login</a></p>
+</section>
+{% endblock %}

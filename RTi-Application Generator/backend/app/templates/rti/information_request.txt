@@ -1,0 +1,40 @@
+To,
+The Public Information Officer,
+{DEPARTMENT_NAME}
+{DEPARTMENT_ADDRESS}
+
+Subject: Application for Information under the Right to Information Act, 2005
+
+Respected Sir/Madam,
+
+I, {APPLICANT_NAME}, a citizen of India, resident of {APPLICANT_ADDRESS}, hereby submit this application under Section 6(1) of the Right to Information Act, 2005, seeking the following information:
+
+INFORMATION REQUESTED:
+{INFORMATION_REQUESTED}
+
+PERIOD FOR WHICH INFORMATION IS SOUGHT:
+{TIME_PERIOD}
+
+I hereby declare that:
+1. I am a citizen of India.
+2. The information sought does not fall within the restrictions contained in Section 8 and 9 of the RTI Act, 2005.
+3. I am willing to pay any additional fee that may be prescribed for obtaining the information.
+
+I am enclosing the prescribed application fee of Rs. 10/- (Rupees Ten Only) payable via {PAYMENT_MODE}.
+
+As per Section 7(1) of the RTI Act, 2005, I request that the above information be provided within 30 days from the date of receipt of this application.
+
+In case this application is transferred to another Public Authority under Section 6(3), I request that I be informed about the same.
+
+Thanking you,
+
+Yours faithfully,
+
+{APPLICANT_NAME}
+{APPLICANT_ADDRESS}
+{APPLICANT_CONTACT}
+
+Date: {DATE}
+Place: {PLACE}
+
+Enclosure: Application fee of Rs. 10/- via {PAYMENT_MODE}

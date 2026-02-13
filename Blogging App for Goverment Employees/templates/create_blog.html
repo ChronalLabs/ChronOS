@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Blog</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f4f6f9;
+        }
+
+        .navbar {
+            background: #1f2937;
+            padding: 15px 30px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #374151;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #d1d5db;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e40af;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div>Gov Gazette</div>
+        <div>
+            <a href="/">Home</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Create New Blog</h2>
+
+        <form method="post" action="/create-blog">
+            <label>Blog Title</label>
+            <input type="text" name="title" placeholder="Enter blog title" required>
+
+            <label>Blog Content</label>
+            <textarea name="content" placeholder="Write your blog content here..." required></textarea>
+
+            <button type="submit">Publish Blog</button>
+        </form>
+
+        <a class="back-link" href="/">← Back to Home</a>
+    </div>
+
+</body>
+</html>

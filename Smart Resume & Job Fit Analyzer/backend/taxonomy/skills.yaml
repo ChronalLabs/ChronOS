@@ -1,0 +1,664 @@
+# Skill Taxonomy Configuration
+# Defines canonical skill names and their aliases for normalization
+# Supports multiple domains: Tech, Healthcare, Finance, Marketing, Design, Legal, Education, Sales, HR, Engineering
+
+categories:
+  # ==================== TECHNOLOGY DOMAIN ====================
+  programming_languages:
+    canonical:
+      - Python
+      - JavaScript
+      - TypeScript
+      - Java
+      - C++
+      - C#
+      - Go
+      - Rust
+      - Ruby
+      - PHP
+      - Swift
+      - Kotlin
+      - Scala
+      - R
+      - SQL
+      - MATLAB
+    aliases:
+      python:
+        - py
+        - python3
+        - python 3
+      javascript:
+        - js
+        - ES6
+        - ECMAScript
+      typescript:
+        - ts
+      cpp:
+        - c plus plus
+      csharp:
+        - c sharp
+        - dotnet
+      golang:
+        - go lang
+
+  frontend_frameworks:
+    canonical:
+      - React
+      - Angular
+      - Vue.js
+      - Next.js
+      - Svelte
+      - HTML
+      - CSS
+      - Tailwind CSS
+      - Bootstrap
+      - SASS
+    aliases:
+      react:
+        - reactjs
+        - react.js
+        - react js
+      angular:
+        - angularjs
+        - angular.js
+      vue:
+        - vuejs
+        - vue.js
+        - vue js
+      nextjs:
+        - next.js
+        - next js
+      tailwind:
+        - tailwindcss
+
+  backend_frameworks:
+    canonical:
+      - Node.js
+      - Express.js
+      - Django
+      - Flask
+      - FastAPI
+      - Spring
+      - Spring Boot
+      - Ruby on Rails
+      - ASP.NET
+      - NestJS
+    aliases:
+      nodejs:
+        - node
+        - node.js
+      express:
+        - express.js
+        - expressjs
+      rails:
+        - ror
+        - ruby rails
+      springboot:
+        - spring-boot
+      aspnet:
+        - asp.net
+        - asp net
+
+  databases:
+    canonical:
+      - PostgreSQL
+      - MySQL
+      - MongoDB
+      - Redis
+      - SQLite
+      - Oracle
+      - SQL Server
+      - Elasticsearch
+      - DynamoDB
+      - Cassandra
+    aliases:
+      postgresql:
+        - postgres
+        - psql
+        - pg
+      mysql:
+        - my sql
+      mongodb:
+        - mongo
+        - mongo db
+      sqlserver:
+        - mssql
+        - ms sql
+
+  cloud_platforms:
+    canonical:
+      - AWS
+      - Google Cloud
+      - Azure
+      - Heroku
+      - DigitalOcean
+      - Vercel
+      - Netlify
+    aliases:
+      aws:
+        - amazon web services
+        - amazon aws
+      gcp:
+        - google cloud platform
+        - gcloud
+      azure:
+        - microsoft azure
+        - ms azure
+
+  devops_tools:
+    canonical:
+      - Docker
+      - Kubernetes
+      - Terraform
+      - Ansible
+      - Jenkins
+      - GitLab CI
+      - GitHub Actions
+      - CircleCI
+      - Prometheus
+      - Grafana
+    aliases:
+      kubernetes:
+        - k8s
+        - kube
+      docker:
+        - containerization
+      terraform:
+        - tf
+      gitlab_ci:
+        - gitlab-ci
+        - gitlab ci/cd
+
+  data_ml:
+    canonical:
+      - Machine Learning
+      - Deep Learning
+      - TensorFlow
+      - PyTorch
+      - Pandas
+      - NumPy
+      - Scikit-learn
+      - Keras
+      - Apache Spark
+      - Hadoop
+      - Natural Language Processing
+      - Computer Vision
+    aliases:
+      machine_learning:
+        - ml
+      deep_learning:
+        - dl
+      tensorflow:
+        - tf
+      pytorch:
+        - torch
+      sklearn:
+        - scikit-learn
+        - scikit learn
+      nlp:
+        - natural language processing
+
+  development_tools:
+    canonical:
+      - Git
+      - GitHub
+      - GitLab
+      - Bitbucket
+      - VS Code
+      - IntelliJ
+      - Jira
+      - Confluence
+    aliases:
+      git:
+        - version control
+      vscode:
+        - visual studio code
+      intellij:
+        - intellij idea
+
+  methodologies:
+    canonical:
+      - Agile
+      - Scrum
+      - Kanban
+      - TDD
+      - CI/CD
+      - DevOps
+      - Microservices
+      - REST API
+      - GraphQL
+    aliases:
+      agile:
+        - agile methodology
+      scrum:
+        - scrum master
+      tdd:
+        - test driven development
+      cicd:
+        - ci/cd
+        - continuous integration
+        - continuous deployment
+      restapi:
+        - rest
+        - restful
+        - restful api
+
+  # ==================== HEALTHCARE DOMAIN ====================
+  healthcare:
+    canonical:
+      - Patient Care
+      - HIPAA Compliance
+      - Electronic Medical Records
+      - Clinical Research
+      - Nursing
+      - CPR Certified
+      - BLS Certified
+      - ACLS Certified
+      - Phlebotomy
+      - Medical Coding
+      - ICD-10
+      - Epic Systems
+      - Cerner
+      - Patient Assessment
+      - Vital Signs
+      - Medication Administration
+      - Care Coordination
+      - Infection Control
+      - OSHA Compliance
+      - Medical Terminology
+    aliases:
+      emr:
+        - electronic medical records
+        - electronic health records
+        - ehr
+      hipaa:
+        - hipaa compliance
+        - hipaa certified
+      cpr:
+        - cpr certified
+        - cardiopulmonary resuscitation
+      bls:
+        - basic life support
+      acls:
+        - advanced cardiac life support
+
+  # ==================== FINANCE DOMAIN ====================
+  finance:
+    canonical:
+      - Financial Analysis
+      - Financial Modeling
+      - Bloomberg Terminal
+      - Excel Advanced
+      - Risk Assessment
+      - Auditing
+      - Accounting
+      - GAAP
+      - IFRS
+      - Tax Preparation
+      - Budgeting
+      - Forecasting
+      - QuickBooks
+      - SAP
+      - Oracle Financials
+      - Investment Analysis
+      - Portfolio Management
+      - Derivatives
+      - Equity Research
+      - Credit Analysis
+      - CFA
+      - CPA
+      - Financial Reporting
+    aliases:
+      gaap:
+        - generally accepted accounting principles
+      ifrs:
+        - international financial reporting standards
+      cfa:
+        - chartered financial analyst
+      cpa:
+        - certified public accountant
+      financial_modeling:
+        - financial models
+        - dcf modeling
+
+  # ==================== MARKETING DOMAIN ====================
+  marketing:
+    canonical:
+      - SEO
+      - SEM
+      - Google Analytics
+      - Google Ads
+      - Facebook Ads
+      - Social Media Marketing
+      - Content Marketing
+      - Email Marketing
+      - Copywriting
+      - Brand Strategy
+      - Market Research
+      - Marketing Automation
+      - HubSpot
+      - Marketo
+      - Salesforce Marketing Cloud
+      - A/B Testing
+      - Conversion Optimization
+      - PPC
+      - Influencer Marketing
+      - PR
+      - Campaign Management
+    aliases:
+      seo:
+        - search engine optimization
+      sem:
+        - search engine marketing
+      ppc:
+        - pay per click
+        - paid search
+      ga:
+        - google analytics
+      hubspot:
+        - hub spot
+      pr:
+        - public relations
+
+  # ==================== DESIGN DOMAIN ====================
+  design:
+    canonical:
+      - Figma
+      - Adobe Photoshop
+      - Adobe Illustrator
+      - Adobe XD
+      - Sketch
+      - InVision
+      - UX Design
+      - UI Design
+      - User Research
+      - Wireframing
+      - Prototyping
+      - Typography
+      - Color Theory
+      - Visual Design
+      - Interaction Design
+      - Design Systems
+      - Responsive Design
+      - Motion Design
+      - After Effects
+      - Premiere Pro
+      - Blender
+      - AutoCAD
+    aliases:
+      ux:
+        - user experience
+        - ux design
+      ui:
+        - user interface
+        - ui design
+      photoshop:
+        - adobe photoshop
+        - ps
+      illustrator:
+        - adobe illustrator
+        - ai
+      xd:
+        - adobe xd
+
+  # ==================== LEGAL DOMAIN ====================
+  legal:
+    canonical:
+      - Legal Research
+      - Contract Law
+      - Corporate Law
+      - Litigation
+      - Compliance
+      - Regulatory Affairs
+      - Intellectual Property
+      - Patent Law
+      - Trademark Law
+      - Due Diligence
+      - Legal Writing
+      - Westlaw
+      - LexisNexis
+      - Paralegal
+      - Case Management
+      - E-Discovery
+      - GDPR
+      - Privacy Law
+      - Employment Law
+      - Real Estate Law
+    aliases:
+      ip:
+        - intellectual property
+      gdpr:
+        - general data protection regulation
+      westlaw:
+        - west law
+      lexis:
+        - lexisnexis
+        - lexis nexis
+
+  # ==================== EDUCATION DOMAIN ====================
+  education:
+    canonical:
+      - Curriculum Development
+      - Lesson Planning
+      - Classroom Management
+      - Student Assessment
+      - Differentiated Instruction
+      - Special Education
+      - IEP Development
+      - Learning Management Systems
+      - Canvas
+      - Blackboard
+      - Moodle
+      - Google Classroom
+      - Educational Technology
+      - Online Teaching
+      - Tutoring
+      - Academic Advising
+      - TESOL
+      - ESL
+      - Early Childhood Education
+    aliases:
+      lms:
+        - learning management systems
+        - learning management system
+      iep:
+        - individualized education program
+      esl:
+        - english as a second language
+      tesol:
+        - teaching english to speakers of other languages
+
+  # ==================== SALES DOMAIN ====================
+  sales:
+    canonical:
+      - Sales Strategy
+      - Account Management
+      - Lead Generation
+      - CRM
+      - Salesforce
+      - HubSpot CRM
+      - Negotiation
+      - Cold Calling
+      - Pipeline Management
+      - Territory Management
+      - B2B Sales
+      - B2C Sales
+      - Enterprise Sales
+      - Solution Selling
+      - Contract Negotiation
+      - Sales Forecasting
+      - Customer Retention
+      - Upselling
+      - Cross-selling
+      - Quota Achievement
+    aliases:
+      crm:
+        - customer relationship management
+      b2b:
+        - business to business
+      b2c:
+        - business to consumer
+
+  # ==================== HR DOMAIN ====================
+  human_resources:
+    canonical:
+      - Recruiting
+      - Talent Acquisition
+      - Onboarding
+      - Employee Relations
+      - HRIS
+      - Benefits Administration
+      - Payroll
+      - Performance Management
+      - Training and Development
+      - Compensation Analysis
+      - Workday
+      - ADP
+      - SuccessFactors
+      - BambooHR
+      - Labor Law
+      - Diversity and Inclusion
+      - Employee Engagement
+      - Succession Planning
+      - HR Analytics
+      - SHRM
+    aliases:
+      hris:
+        - human resources information system
+      shrm:
+        - society for human resource management
+      d&i:
+        - diversity and inclusion
+        - dei
+
+  # ==================== ENGINEERING DOMAIN ====================
+  engineering:
+    canonical:
+      - CAD
+      - SolidWorks
+      - AutoCAD
+      - CATIA
+      - Ansys
+      - MATLAB
+      - Simulink
+      - Project Management
+      - Quality Control
+      - Quality Assurance
+      - Six Sigma
+      - Lean Manufacturing
+      - Process Engineering
+      - Mechanical Design
+      - Electrical Engineering
+      - Civil Engineering
+      - PLC Programming
+      - SCADA
+      - P&ID
+      - Safety Compliance
+    aliases:
+      cad:
+        - computer aided design
+      qa:
+        - quality assurance
+      qc:
+        - quality control
+      plc:
+        - programmable logic controller
+
+  # ==================== DATA & ANALYTICS DOMAIN ====================
+  data_analytics:
+    canonical:
+      - Tableau
+      - Power BI
+      - Looker
+      - SQL
+      - Data Visualization
+      - Statistical Analysis
+      - Business Intelligence
+      - Data Warehousing
+      - ETL
+      - Data Mining
+      - Predictive Analytics
+      - Google Data Studio
+      - Excel Pivot Tables
+      - SPSS
+      - SAS
+      - R Programming
+      - A/B Testing
+      - KPI Reporting
+      - Dashboard Design
+    aliases:
+      bi:
+        - business intelligence
+      etl:
+        - extract transform load
+      powerbi:
+        - power bi
+        - microsoft power bi
+
+  # ==================== SOFT SKILLS ====================
+  soft_skills:
+    canonical:
+      - Communication
+      - Leadership
+      - Problem Solving
+      - Critical Thinking
+      - Teamwork
+      - Time Management
+      - Adaptability
+      - Creativity
+      - Emotional Intelligence
+      - Conflict Resolution
+      - Decision Making
+      - Public Speaking
+      - Presentation Skills
+      - Mentoring
+      - Collaboration
+      - Attention to Detail
+      - Organizational Skills
+      - Strategic Planning
+      - Customer Service
+      - Interpersonal Skills
+    aliases:
+      communication:
+        - written communication
+        - verbal communication
+      leadership:
+        - team leadership
+        - people management
+      problem_solving:
+        - analytical thinking
+
+  # ==================== PROJECT MANAGEMENT ====================
+  project_management:
+    canonical:
+      - Project Management
+      - Program Management
+      - PMP
+      - Agile Project Management
+      - Waterfall
+      - Stakeholder Management
+      - Risk Management
+      - Resource Planning
+      - MS Project
+      - Asana
+      - Trello
+      - Monday.com
+      - Basecamp
+      - Smartsheet
+      - Gantt Charts
+      - Budget Management
+      - Scope Management
+      - Change Management
+      - PRINCE2
+    aliases:
+      pmp:
+        - project management professional
+      prince2:
+        - prince 2
+
+# Match confidence thresholds
+thresholds:
+  exact_match: 100
+  high_confidence: 90
+  medium_confidence: 75
+  low_confidence: 60

@@ -1,0 +1,305 @@
+/* ============================================
+   MAIN LAYOUT - Institutional Civic Design
+   ============================================ */
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.app-header {
+  background-color: white;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 64px;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+/* Brand Logo */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-brand-orange);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-brand-navy);
+  letter-spacing: -0.02em;
+}
+
+.brand-tagline {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Navigation */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  height: 100%;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  height: 100%;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--color-brand-navy);
+  background-color: var(--color-bg-subtle);
+}
+
+.nav-link.active {
+  color: var(--color-brand-orange);
+  border-bottom-color: var(--color-brand-orange);
+  font-weight: 600;
+}
+
+/* Header Status Badge */
+.header-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.status-badge svg {
+  color: #16a34a;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  color: var(--color-brand-navy);
+  cursor: pointer;
+}
+
+/* ===== MAIN CONTENT ===== */
+.app-content {
+  flex: 1;
+}
+
+/* ===== FOOTER ===== */
+.app-footer {
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  padding: 3rem 0 2rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-brand {
+  max-width: 320px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo svg {
+  color: var(--color-brand-orange);
+}
+
+.footer-logo h3 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--color-brand-navy);
+}
+
+.footer-brand > p {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.footer-note {
+  font-size: 0.8rem !important;
+  color: var(--color-text-tertiary) !important;
+}
+
+.footer-links {
+  text-align: right;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-nav a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.footer-nav a:hover {
+  color: var(--color-brand-orange);
+}
+
+.copyright {
+  color: var(--color-text-tertiary);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.footer-disclaimer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-disclaimer p {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-disclaimer strong {
+  color: var(--color-text-secondary);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .brand-tagline {
+    display: none;
+  }
+  
+  .header-status {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    height: auto;
+  }
+  
+  .main-nav.mobile-open {
+    display: flex;
+  }
+  
+  .nav-link {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+  }
+  
+  .nav-link.active {
+    border-bottom: none;
+    border-left-color: var(--color-brand-orange);
+    background-color: var(--color-bg-subtle);
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-brand {
+    max-width: 100%;
+  }
+  
+  .footer-logo {
+    justify-content: center;
+  }
+  
+  .footer-links {
+    text-align: center;
+  }
+  
+  .footer-nav {
+    justify-content: center;
+  }
+}

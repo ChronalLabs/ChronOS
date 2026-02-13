@@ -1,0 +1,117 @@
+/* ============================================
+   DOWNLOAD PANEL - Institutional Civic Design
+   ============================================ */
+
+.download-panel-card {
+  background: white;
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  margin-top: 1rem;
+}
+
+.download-panel-card .panel-header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.download-panel-card .panel-header h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-brand-navy);
+  margin: 0 0 0.35rem 0;
+}
+
+.download-panel-card .panel-header p {
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.download-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  background: white;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.download-btn span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: color 0.15s;
+}
+
+.download-btn__icon {
+  color: var(--color-text-tertiary);
+  transition: color 0.15s;
+}
+
+/* Base Hover */
+.download-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* PDF Specific Hover */
+.download-btn.pdf-btn:hover {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.download-btn.pdf-btn:hover .download-btn__icon {
+  color: #ef4444;
+}
+
+.download-btn.pdf-btn:hover span {
+  color: #7f1d1d;
+}
+
+/* DOCX Specific Hover */
+.download-btn.docx-btn:hover {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+}
+
+.download-btn.docx-btn:hover .download-btn__icon {
+  color: #2563eb;
+}
+
+.download-btn.docx-btn:hover span {
+  color: #1e3a8a;
+}
+
+/* TXT Specific Hover */
+.download-btn:hover:not(.pdf-btn):not(.docx-btn) {
+  border-color: var(--color-text-tertiary);
+  background-color: var(--color-bg-subtle);
+}
+
+.download-btn:hover:not(.pdf-btn):not(.docx-btn) .download-btn__icon {
+  color: var(--color-text-primary);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .download-grid {
+    grid-template-columns: 1fr;
+  }
+}

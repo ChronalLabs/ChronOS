@@ -1,0 +1,13 @@
+<section id="insights" class="insights mt-5">
+    <h3>Insights</h3>
+    <div class="card mt-3">
+      <div class="card-body">
+        {% if remaining < 0 %}
+          <p class="text-danger">You have exceeded your monthly budget.</p>
+        {% else %}
+          <p>You are within your budget. Keep going.</p>
+        {% endif %}
+        <p class="text-muted">More AI-based insights coming soon.</p>
+      </div>
+    </div>
+  </section>

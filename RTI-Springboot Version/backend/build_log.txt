@@ -1,0 +1,108 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< com.rtigen:backend >-------------------------
+[INFO] Building RTI-Gen Backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ backend ---
+[INFO] Deleting C:\Users\ASUS\Desktop\RTi genrator\backend\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ backend ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 29 source files with javac [debug release 17] to target\classes
+[INFO] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/OpenAiAdapter.java: C:\Users\ASUS\Desktop\RTi genrator\backend\src\main\java\com\rtigen\adapter\ai\OpenAiAdapter.java uses unchecked or unsafe operations.
+[INFO] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/OpenAiAdapter.java: Recompile with -Xlint:unchecked for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/OpenAiAdapter.java:[157,21] constructor Meta in class com.rtigen.dto.SuggestionResponse.Meta cannot be applied to given types;
+  required: no arguments
+  found:    java.lang.String,java.lang.String
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/OpenAiAdapter.java:[155,39] constructor Suggestion in class com.rtigen.dto.SuggestionResponse.Suggestion cannot be applied to given types;
+  required: no arguments
+  found:    java.lang.String,java.lang.String,java.lang.String,double,boolean
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/OpenAiAdapter.java:[179,20] constructor DraftResponse in class com.rtigen.dto.DraftResponse cannot be applied to given types;
+  required: no arguments
+  found:    java.lang.String,java.lang.String,java.util.List<java.lang.String>,java.util.List<java.lang.Object>
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/OpenAiAdapter.java:[190,46] cannot find symbol
+  symbol:   method getMode()
+  location: variable request of type com.rtigen.dto.DraftRequest
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/LocalLlmAdapter.java:[46,17] constructor Meta in class com.rtigen.dto.SuggestionResponse.Meta cannot be applied to given types;
+  required: no arguments
+  found:    java.lang.String,java.lang.String
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/LocalLlmAdapter.java:[44,35] constructor Suggestion in class com.rtigen.dto.SuggestionResponse.Suggestion cannot be applied to given types;
+  required: no arguments
+  found:    java.lang.String,java.lang.String,java.lang.String,double,boolean
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/LocalLlmAdapter.java:[52,80] cannot find symbol
+  symbol:   method getName()
+  location: variable request of type com.rtigen.dto.DraftRequest
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/LocalLlmAdapter.java:[53,34] cannot find symbol
+  symbol:   method getMode()
+  location: variable request of type com.rtigen.dto.DraftRequest
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/api/RtiController.java:[75,16] cannot find symbol
+  symbol:   method setMode(java.lang.String)
+  location: variable request of type com.rtigen.dto.DraftRequest
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/api/RtiController.java:[82,16] cannot find symbol
+  symbol:   method setMode(java.lang.String)
+  location: variable request of type com.rtigen.dto.DraftRequest
+[INFO] 10 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.079 s
+[INFO] Finished at: 2026-02-01T12:13:57+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project backend: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/OpenAiAdapter.java:[157,21] constructor Meta in class com.rtigen.dto.SuggestionResponse.Meta cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    java.lang.String,java.lang.String
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/OpenAiAdapter.java:[155,39] constructor Suggestion in class com.rtigen.dto.SuggestionResponse.Suggestion cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    java.lang.String,java.lang.String,java.lang.String,double,boolean
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/OpenAiAdapter.java:[179,20] constructor DraftResponse in class com.rtigen.dto.DraftResponse cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    java.lang.String,java.lang.String,java.util.List<java.lang.String>,java.util.List<java.lang.Object>
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/OpenAiAdapter.java:[190,46] cannot find symbol
+[ERROR]   symbol:   method getMode()
+[ERROR]   location: variable request of type com.rtigen.dto.DraftRequest
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/LocalLlmAdapter.java:[46,17] constructor Meta in class com.rtigen.dto.SuggestionResponse.Meta cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    java.lang.String,java.lang.String
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/LocalLlmAdapter.java:[44,35] constructor Suggestion in class com.rtigen.dto.SuggestionResponse.Suggestion cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    java.lang.String,java.lang.String,java.lang.String,double,boolean
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/LocalLlmAdapter.java:[52,80] cannot find symbol
+[ERROR]   symbol:   method getName()
+[ERROR]   location: variable request of type com.rtigen.dto.DraftRequest
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/LocalLlmAdapter.java:[53,34] cannot find symbol
+[ERROR]   symbol:   method getMode()
+[ERROR]   location: variable request of type com.rtigen.dto.DraftRequest
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/api/RtiController.java:[75,16] cannot find symbol
+[ERROR]   symbol:   method setMode(java.lang.String)
+[ERROR]   location: variable request of type com.rtigen.dto.DraftRequest
+[ERROR] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/api/RtiController.java:[82,16] cannot find symbol
+[ERROR]   symbol:   method setMode(java.lang.String)
+[ERROR]   location: variable request of type com.rtigen.dto.DraftRequest
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

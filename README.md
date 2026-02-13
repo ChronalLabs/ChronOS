@@ -1,300 +1,329 @@
-# 🏛️ CIVISIM - Civic Policy Intelligence Platform
+# ChronalLabs – Civic Technology Initiative (GSoC 2026)
 
-> **Before any policy affects citizens, decision-makers should see its impact.**
+## Overview
 
-A comprehensive **multi-domain civic policy simulation platform** that helps governments visualize the real-world impact of policy decisions on **citizens, resources, and public welfare** — before those decisions are implemented.
+ChronalLabs is an open-source civic-technology initiative focused on building practical, scalable tools that solve real-world public challenges.
 
----
+This repository serves as the central coordination hub for our Google Summer of Code (GSoC) project ideas, contributor guidelines, architectural discussions, and long-term civic-tech roadmap.
 
-## 🌍 Vision
+Our mission is simple:
 
-CIVISIM aims to be the **universal policy simulation engine** for all civic domains — enabling data-driven governance across every sector that affects citizens' lives.
+> Use open-source technology to reduce friction between citizens, institutions, and public systems.
 
----
+We build systems that are:
+- Transparent
+- Maintainable
+- Modular
+- Beginner-friendly
+- Impact-driven
 
-## 🎯 The Problem We Solve
-
-### The Challenge
-Policy decisions across government sectors are made under intense pressure:
-- ⏱️ Political deadlines and election cycles
-- 💰 Budget constraints and resource limitations
-- 👥 Public demands and stakeholder conflicts
-- 📊 Lack of predictive tools for impact assessment
-
-**The blind spot?** There's no practical way to simulate policy consequences *before execution*.
-
-### The Cost
-This results in:
-- 📉 Policies that don't achieve intended outcomes
-- 💔 Unintended negative effects on citizens
-- 😤 Public dissatisfaction and erosion of trust
-- 💸 Wasted resources on ineffective measures
-- ⚠️ Safety and welfare compromises
-
-### Our Solution
-**CIVISIM** = A decision-support platform where policymakers can test *what-if* scenarios across multiple domains and clearly understand their consequences before implementation.
+This repository is not a single-project codebase.  
+It represents a growing ecosystem of civic and public-interest tools.
 
 ---
 
-## 🏗️ Supported Policy Domains
+# Why ChronalLabs?
 
-| Domain | Status | Description |
-|--------|--------|-------------|
-| 🏗️ **Construction & Infrastructure** | ✅ Active | Urban development, building permits, safety regulations |
-| ❤️ **Healthcare & Public Health** | 🔜 Coming Soon | Medical policies, hospital regulations, health emergencies |
-| 🎓 **Education & Academia** | 🔜 Coming Soon | School policies, curriculum changes, funding allocation |
-| 🚗 **Transportation & Mobility** | 🔜 Coming Soon | Traffic policies, public transit, road safety |
-| 🌱 **Environment & Sustainability** | 🔜 Coming Soon | Green policies, pollution control, conservation |
-| ⚖️ **Legal & Governance** | 🔜 Coming Soon | Civil laws, regulatory compliance, citizen rights |
-| 💼 **Employment & Labor** | 🔜 Coming Soon | Labor laws, workplace safety, employment policies |
-| ⚡ **Energy & Utilities** | 🔜 Coming Soon | Power policies, utility regulations, renewables |
+Public systems often suffer from:
 
----
+- Complex documentation
+- Lack of structured civic assistance
+- Poor accessibility of information
+- Limited technological support for citizens
+- Insufficient pre-implementation analysis of policies
 
-## ✨ What CIVISIM Does
+ChronalLabs aims to address these systemic gaps using clean architecture, AI-assisted systems, and open collaboration.
 
-### ✅ Core Features
-| Feature | Impact |
-|---------|--------|
-| 🧠 **ML Policy Analysis** | AI-powered extraction of intent, entities, and risks |
-| 📋 **Policy Simulator** | Test different strategies before execution |
-| 🔄 **Baseline Comparison** | See how alternatives perform vs. current approach |
-| 📊 **Trade-off Visualization** | Multiple metrics — all visible and comparable |
-| ⚠️ **Risk Detection** | Automatic flagging of dangerous policy combinations |
-| 📈 **Impact Dashboard** | Track metrics relevant to each domain |
-| 💡 **Explainable AI** | Understand *why* outcomes happen (not just *what*) |
-
-### ❌ What We Don't Do
-- ❌ Predict the future with certainty
-- ❌ Automatically approve policies  
-- ❌ Replace planners, experts, or officials
-- ❌ Optimize blindly for single metrics
-
-**Why?** Because humans must remain in control of decisions that affect real lives.
+We focus on tools that:
+- Empower citizens
+- Assist policymakers
+- Improve transparency
+- Strengthen institutional clarity
+- Promote data-informed governance
 
 ---
 
-## 🛠️ Tech Stack
+# GSoC 2026 Vision
 
-### Frontend
-- **React 18** with TypeScript
-- **Vite** for fast development
-- **Tailwind CSS** for styling
-- **Recharts** for data visualization
-- **React Router** for navigation
+For Google Summer of Code 2026, ChronalLabs proposes a set of modular, scalable, and impact-oriented projects designed to:
 
-### Backend
-- **FastAPI** (Python)
-- **Modular architecture** (routes, services, schemas)
-- **CORS-enabled** API
+- Encourage beginner contributors
+- Provide structured mentorship
+- Deliver measurable civic impact
+- Build long-term maintainable systems
 
-### ML Pipeline
-- **PyTorch** & **Transformers** (Hugging Face)
-- **spaCy** for NER
-- **DistilBERT** for intent extraction
-- **BART** for zero-shot classification
-- Custom models for:
-  - Ambiguity detection
-  - Risk assessment
-  - Parameter mapping
-  - Impact explanation
+Each project is scoped to be achievable within the GSoC timeline while remaining extensible beyond it.
 
 ---
 
-## 📁 Project Structure
+# Project Portfolio
 
-```
-civisim/
-├── frontend/                 # React + TypeScript UI
-│   └── src/
-│       ├── pages/           # Route pages
-│       │   ├── LandingPage.tsx
-│       │   ├── MLAnalysisPage.tsx
-│       │   ├── SimulationEnginePage.tsx
-│       │   ├── PolicyConfigurationPage.tsx
-│       │   └── ImpactAnalysisPage.tsx
-│       └── components/      # Reusable components
-│
-├── backend/                  # FastAPI Backend
-│   ├── main.py              # App entry point
-│   ├── simulation.py        # Simulation engine
-│   ├── routes/              # API route handlers
-│   │   ├── simulation.py    # /simulate endpoints
-│   │   └── ml.py            # /ml/* endpoints
-│   ├── services/            # Business logic
-│   │   └── ml_service.py    # ML model management
-│   └── schemas/             # Pydantic models
-│       └── models.py        # Request/response schemas
-│
-└── ml/                       # ML Pipeline
-    ├── main.py              # Full pipeline runner
-    ├── models/              # ML model implementations
-    │   ├── document_parser.py
-    │   ├── intent_extractor.py
-    │   ├── policy_ner.py
-    │   ├── ambiguity_detector.py
-    │   ├── policy_classifier.py
-    │   ├── policy_mapper.py
-    │   ├── impact_explainer.py
-    │   └── risk_detector.py
-    └── .venv/               # Python virtual environment
-```
+Below are the major project tracks under ChronalLabs.
 
 ---
 
-## 🚀 Getting Started
+## 1️⃣ AI-Powered Civic Drafting Platform  
+*(Public Complaints + RTI + Multilingual Support + Web Interface)*
 
-### Prerequisites
-- Node.js 18+
-- Python 3.12+
-- Git
+### What It Solves
+Many citizens struggle with:
+- Correct legal formatting
+- Structured complaint writing
+- RTI application clarity
+- Language barriers
 
-### Installation
+### What We Build
+A unified civic drafting engine that:
+- Generates structured public complaints
+- Generates properly formatted RTI applications
+- Supports English and Hindi
+- Provides an editable web interface
+- Maintains clear separation between user input and generated output
 
-1. **Clone the repository**
-```bash
-git clone https://github.com/your-repo/civisim.git
-cd civisim
-```
+### Real-World Impact
+- Reduces barriers in accessing public grievance systems
+- Encourages structured civic participation
+- Improves transparency and documentation quality
 
-2. **Setup ML Environment**
-```bash
-cd ml
-python -m venv .venv
-.venv\Scripts\activate  # Windows
-pip install -r requirements.txt
-```
-
-3. **Setup Frontend**
-```bash
-cd frontend
-npm install
-```
-
-4. **Install Backend Dependencies**
-```bash
-cd backend
-pip install fastapi uvicorn pydantic
-```
-
-### Running the Application
-
-1. **Start Backend** (Port 8000)
-```bash
-cd backend
-python -m uvicorn main:app --reload --port 8000
-```
-
-2. **Start Frontend** (Port 3000)
-```bash
-cd frontend
-npm run dev
-```
-
-3. **Access the Application**
-- Frontend: http://localhost:3000
-- API Docs: http://localhost:8000/docs
+This project acts as a foundational civic-access layer for broader institutional reform.
 
 ---
 
-## 🔌 API Endpoints
+## 2️⃣ Smart Resume & Job Fit Analyzer
 
-### Simulation
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/simulate` | Run policy simulation |
+### Problem
+Job seekers often lack clarity on how well their resume matches a job description.
 
-### ML Analysis
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/ml/status` | Check ML models status |
-| POST | `/ml/analyze` | Full ML pipeline analysis |
-| POST | `/ml/extract-intent` | Extract policy intent |
-| POST | `/ml/extract-entities` | Extract named entities |
-| POST | `/ml/analyze-ambiguity` | Analyze text ambiguity |
-| POST | `/ml/classify` | Classify policy focus |
+### Solution
+An AI-powered system that:
+- Parses resumes (PDF/DOCX)
+- Compares with job descriptions
+- Generates match scores
+- Suggests actionable improvements
 
----
-
-## 🎨 Screenshots
-
-### Landing Page
-- Multi-domain selector with 8 policy sectors
-- Active domain highlighted (Construction)
-- Coming soon badges for future domains
-
-### ML Analysis Page
-- Policy text input with sample loader
-- Real-time AI analysis
-- Visual charts for ambiguity and entities
-- Risk assessment with recommendations
-
-### Simulation Engine
-- Interactive parameter configuration
-- Baseline vs. policy comparison
-- Impact metrics visualization
+### Impact
+- Helps students and professionals improve employability
+- Promotes data-driven self-assessment
+- Encourages structured career preparation
 
 ---
 
-## 🔮 Roadmap
+## 3️⃣ Expense Insight & Budget Coach
 
-### Phase 1: Foundation ✅
-- [x] Construction domain implementation
-- [x] ML pipeline (8 models)
-- [x] Frontend with React/TypeScript
-- [x] Backend with FastAPI
+### Problem
+Most individuals track expenses but fail to understand patterns.
 
-### Phase 2: Expansion 🔄
-- [ ] Healthcare domain
-- [ ] Transportation domain
-- [ ] Enhanced visualizations
-- [ ] PDF policy upload
+### Solution
+A personal finance awareness tool that:
+- Categorizes expenses
+- Provides monthly insights
+- Suggests actionable improvements
+- Visualizes spending trends
 
-### Phase 3: Intelligence 📋
-- [ ] Cross-domain impact analysis
-- [ ] Historical policy learning
-- [ ] Recommendation engine
-- [ ] Multi-language support
+### Impact
+- Encourages financial literacy
+- Promotes behavioral awareness
+- Supports responsible planning
 
 ---
 
-## 👥 Contributing
+## 4️⃣ Study Planner & Focus Assistant
 
-We welcome contributions! Please read our contributing guidelines before submitting PRs.
+### Problem
+Students struggle with time management and focus.
 
----
+### Solution
+An AI-assisted productivity platform that:
+- Creates personalized study schedules
+- Tracks goals
+- Provides productivity summaries
+- Includes focus timers and analytics
 
-## 🤝 Code of Conduct
-
-Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
-
----
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-Copyright (c) 2026 Chronallabs
-
----
-
-## 🙏 Acknowledgments
-
-- Built for data-driven governance
-- Inspired by the need for transparent policy-making
-- Designed for citizens, by citizens
+### Impact
+- Improves academic efficiency
+- Reduces burnout
+- Encourages structured learning
 
 ---
 
-<div align="center">
+## 5️⃣ Blogging Platform for Organizational & Government Employees
 
-**🏛️ CIVISIM**
+### Problem
+Institutional knowledge is often fragmented.
 
-*Empowering data-driven governance across all civic domains*
+### Solution
+A role-based publishing platform with:
+- Draft → Review → Publish workflow
+- Moderation system
+- Structured documentation management
 
-[Demo](http://localhost:3000) · [API Docs](http://localhost:8000/docs) · [Report Bug](https://github.com/issues)
+### Impact
+- Encourages knowledge sharing
+- Promotes institutional transparency
+- Creates structured public communication
 
-<br />
-<small>Maintained by <a href="https://github.com/Chronallabs">Chronallabs</a></small>
+---
 
-</div>
+## 6️⃣ NeedNearby — Local Help Finder Platform
+
+### Problem
+Finding reliable local service providers can be inefficient.
+
+### Solution
+A geolocation-based discovery platform with:
+- Provider listings
+- Ratings and reviews
+- Smart ranking logic
+
+### Impact
+- Strengthens local economies
+- Improves service accessibility
+- Encourages verified service ecosystems
+
+---
+
+## 7️⃣ Climate-Aware Civic Assistance Platform
+
+### Problem
+Weather alerts lack actionable civic guidance.
+
+### Solution
+A geospatial civic intelligence engine that:
+- Ingests real-time climate data
+- Generates risk zones
+- Maps nearby shelters and hospitals
+- Provides priority-based guidance
+
+### Impact
+- Enhances disaster preparedness
+- Improves real-time civic decision-making
+- Bridges climate data and citizen action
+
+---
+
+## 8️⃣ CIVISIM — Civic Policy Simulation & Evaluation Tool
+
+### Problem
+Policies often produce unintended consequences due to limited pre-implementation analysis.
+
+### Solution
+A structured policy evaluation system that:
+- Extracts policy intent
+- Identifies impacted entities
+- Detects ambiguities
+- Simulates scenario-based outcomes
+
+### Impact
+- Supports informed policymaking
+- Encourages data-backed governance
+- Promotes accountability and transparency
+
+This represents our most advanced research-oriented civic project.
+
+---
+
+## 9️⃣ Interactive DSA Visualizer for Learning at Scale
+
+### Problem
+Students struggle to visualize algorithm behavior.
+
+### Solution
+An interactive algorithm execution and memory visualization system with:
+- Step-by-step execution
+- Code highlighting
+- Real-time data structure rendering
+- Educational explanations
+
+### Impact
+- Improves technical education quality
+- Scales to classrooms and institutions
+- Encourages contributor-friendly modular design
+
+---
+
+## 10️⃣ Learning Planner Pro — Cloud-Based Academic Planner
+
+### Problem
+Academic planning tools often lack device synchronization.
+
+### Solution
+A Google Calendar integrated planner that:
+- Syncs tasks across devices
+- Uses OAuth2 authentication
+- Provides dashboards and productivity analytics
+- Deploys on scalable cloud infrastructure
+
+### Impact
+- Encourages structured academic planning
+- Demonstrates real-world API integration
+- Serves as a model cloud-deployed civic tool
+
+---
+
+# Technical Philosophy
+
+Across all projects, we emphasize:
+
+- Clean Architecture
+- Modular APIs
+- Clear documentation
+- Testability
+- Contributor-friendly structure
+- Scalable design
+
+We prioritize maintainability over shortcuts.
+
+---
+
+
+
+
+
+As active GSoC development begins, project-specific modules and directories will be added in a structured manner.
+
+---
+
+# How We Contribute to Real-World Problems
+
+ChronalLabs does not aim to build experimental demos.
+
+We aim to:
+
+- Reduce civic friction
+- Strengthen policy transparency
+- Improve accessibility of governance systems
+- Empower citizens with structured tools
+- Promote responsible use of AI in public contexts
+
+Our long-term vision is to evolve into a sustainable civic-tech ecosystem that supports institutions, communities, and individuals.
+
+---
+
+# Contributing
+
+We welcome contributors at all levels.
+
+You can contribute by:
+
+- Improving documentation
+- Working on modular features
+- Writing test cases
+- Enhancing architecture
+- Participating in design discussions
+
+Please read `CONTRIBUTING.md` before starting.
+
+---
+
+# License
+
+This project is licensed under the MIT License.
+
+---
+
+# Disclaimer
+
+ChronalLabs builds decision-support and assistance tools.
+
+All outputs generated by our systems are drafts or structured insights.
+Final decisions, submissions, and implementations remain the responsibility of users and institutions.

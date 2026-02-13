@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Login | GovBlog</title>
+</head>
+
+<body style="
+  margin:0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  background: radial-gradient(circle at top, #1b2030, #0b0e14);
+  color:#ffffff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+">
+
+  <div style="
+    width:380px;
+    background:#0f1320;
+    padding:32px;
+    border-radius:14px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.65);
+    animation: fadeIn 0.5s ease;
+  ">
+
+    <h2 style="
+      text-align:center;
+      margin-bottom:22px;
+      font-weight:700;
+      letter-spacing:0.5px;
+    ">
+      🔐 Government Employee Login
+    </h2>
+
+    <form method="post" action="/login">
+
+      <input
+        name="employee_id"
+        placeholder="Employee ID"
+        required
+        style="
+          width:100%;
+          padding:12px;
+          margin-bottom:14px;
+          border-radius:8px;
+          border:none;
+          background:#1c2233;
+          color:#fff;
+          outline:none;
+        "
+      >
+
+      <input
+        name="password"
+        type="password"
+        placeholder="Password"
+        required
+        style="
+          width:100%;
+          padding:12px;
+          margin-bottom:22px;
+          border-radius:8px;
+          border:none;
+          background:#1c2233;
+          color:#fff;
+          outline:none;
+        "
+      >
+
+      <button
+        type="submit"
+        style="
+          width:100%;
+          padding:12px;
+          border:none;
+          border-radius:10px;
+          background: linear-gradient(135deg, #ff77b7, #6ef3c5);
+          font-weight:600;
+          cursor:pointer;
+          transition: transform 0.15s ease, box-shadow 0.15s ease;
+        "
+        onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 6px 18px rgba(0,0,0,0.4)'"
+        onmouseout="this.style.transform='none'; this.style.boxShadow='none'"
+      >
+        Login
+      </button>
+
+    </form>
+
+    <p style="
+      text-align:center;
+      margin-top:16px;
+      font-size:14px;
+      color:#cfd6ff;
+    ">
+      New employee?
+      <a href="/register" style="color:#6ef3c5; text-decoration:none;">
+        Register here
+      </a>
+    </p>
+
+  </div>
+
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+</body>
+</html>

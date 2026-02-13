@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_DATA_MONGODB_HOST=mongo
+      - SPRING_DATA_MONGODB_PORT=27017
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

@@ -1,0 +1,323 @@
+.structured-rti-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-section {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+}
+
+.form-section.half {
+  flex: 1;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-heading);
+  margin: 0 0 0.75rem 0;
+}
+
+.section-title svg {
+  color: var(--color-primary);
+}
+
+.required-badge {
+  color: var(--color-error);
+  font-weight: 700;
+}
+
+.field-help-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+  transition: color 0.2s;
+}
+
+.field-help-toggle:hover {
+  color: var(--color-primary);
+}
+
+.help-box {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-surface-light);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-text-body);
+}
+
+.help-box svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-accent);
+}
+
+.help-box.warning {
+  background: #fff8e6;
+  border-left-color: #f59e0b;
+}
+
+.help-box.warning svg {
+  color: #f59e0b;
+}
+
+.help-box p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper .form-textarea,
+.input-wrapper .form-input,
+.input-wrapper .form-select {
+  padding-right: 2.5rem;
+}
+
+.field-status {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+.field-status.success {
+  color: var(--color-success);
+}
+
+.field-status.error {
+  color: var(--color-error);
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  font-size: 0.9rem;
+  font-family: inherit;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(12, 30, 53, 0.1);
+}
+
+.form-textarea.error,
+.form-input.error,
+.form-select.error {
+  border-color: var(--color-error);
+}
+
+.form-textarea.error:focus,
+.form-input.error:focus,
+.form-select.error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(12, 30, 53, 0.1);
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  font-size: 0.9rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(12, 30, 53, 0.1);
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-error);
+}
+
+.char-count {
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  margin-top: 0.35rem;
+}
+
+.quick-options {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.quick-options button {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.quick-options button:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+/* Record Type Grid */
+.record-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.record-type-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.record-type-option:hover {
+  border-color: var(--color-primary);
+}
+
+.record-type-option.selected {
+  background: rgba(12, 30, 53, 0.05);
+  border-color: var(--color-primary);
+}
+
+.record-type-option input[type="checkbox"] {
+  margin-top: 2px;
+  accent-color: var(--color-primary);
+}
+
+.option-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.option-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-heading);
+}
+
+.option-desc {
+  font-size: 0.7rem;
+  color: var(--color-text-light);
+}
+
+/* Validation Summary */
+.validation-summary {
+  background: var(--color-surface-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1rem 1.25rem;
+}
+
+.validation-summary h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-heading);
+  margin: 0 0 0.75rem 0;
+}
+
+.validation-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.validation-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--border-radius-sm);
+}
+
+.validation-item.valid {
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--color-success);
+}
+
+.validation-item.invalid {
+  background: rgba(220, 38, 38, 0.1);
+  color: var(--color-error);
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .record-type-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .validation-items {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

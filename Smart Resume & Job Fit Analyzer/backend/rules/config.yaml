@@ -1,0 +1,96 @@
+# Scoring Configuration for Rule-Based Evaluation
+# All weights and thresholds are configurable here
+
+scoring:
+  # Final score will always be bounded to these values
+  score_bounds:
+    min: 0
+    max: 100
+
+  # Weight distribution for different scoring components
+  # Weights must sum to 1.0
+  weights:
+    required_skills: 0.40    # 40% weight for required skills match
+    optional_skills: 0.20    # 20% weight for optional/preferred skills
+    experience_depth: 0.25   # 25% weight for experience quality signals
+    education_match: 0.15    # 15% weight for education alignment
+
+  # Thresholds for skill matching using rapidfuzz scores
+  match_thresholds:
+    full_match: 90      # Score >= 90 = full match
+    partial_match: 70   # Score >= 70 = partial match
+    # Below 70 = no match
+
+  # Penalties applied to final score
+  penalties:
+    missing_required_skill: -10   # Per missing required skill
+    max_penalty: -40              # Cap on total penalties
+
+  # Required skill enforcement
+  required_skill_enforcement:
+    minimum_required_matched: 0.50  # At least 50% of required skills must match
+    below_minimum_cap: 60           # Score capped at 60 if below minimum
+
+# Experience depth signals and their weights
+experience_signals:
+  # Leadership indicators
+  leadership:
+    patterns:
+      - "led team"
+      - "managed"
+      - "mentored"
+      - "supervised"
+    weight: 1.2
+
+  # Scale indicators
+  scale:
+    patterns:
+      - "team of \\d+"
+      - "\\d+ engineers"
+      - "\\d+ developers"
+      - "large scale"
+      - "high traffic"
+    weight: 1.1
+
+  # Technical depth indicators
+  technical_depth:
+    patterns:
+      - "built from scratch"
+      - "architected"
+      - "designed"
+      - "implemented"
+      - "optimized"
+    weight: 1.15
+
+  # Duration indicators (years of experience)
+  duration:
+    patterns:
+      - "\\d+ years"
+      - "\\d+\\+ years"
+    weight: 1.1
+
+# Education match scoring
+education:
+  degree_levels:
+    phd: 100
+    doctorate: 100
+    masters: 90
+    master: 90
+    bachelors: 75
+    bachelor: 75
+    associate: 60
+  
+  # Bonus for relevant field matches
+  field_match_bonus: 10
+
+# Output formatting
+output:
+  # Score interpretation labels
+  score_labels:
+    excellent: 85   # >= 85
+    good: 70        # >= 70
+    fair: 55        # >= 55
+    needs_work: 0   # >= 0
+  
+  # Maximum improvement suggestions to show
+  max_suggestions: 5

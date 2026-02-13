@@ -1,0 +1,285 @@
+@import "tailwindcss";
+
+/* 
+  Part 2: Design System - V2 "Vibrant SaaS" Theme
+  Inspiration: SkillUp (Purple/Orange/Lime, Bento Grids, Pill Shapes)
+*/
+
+@theme {
+  /* Color System */
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-50: #F9FAFB;
+  --color-neutral-100: #F3F4F6;
+  --color-neutral-200: #E5E7EB;
+  --color-neutral-300: #D1D5DB;
+  --color-neutral-400: #9CA3AF;
+  --color-neutral-500: #6B7280;
+  --color-neutral-600: #4B5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1F2937;
+  --color-neutral-900: #111827;
+
+  /* Primary: Vibrant Purple/Indigo */
+  --color-primary-50: #EEF2FF;
+  --color-primary-100: #E0E7FF;
+  --color-primary-400: #818CF8;
+  --color-primary-500: #6366F1;
+  --color-primary-600: #4F46E5;
+  --color-primary-700: #4338CA;
+
+  /* Secondary: Active Orange */
+  --color-secondary-50: #FFF7ED;
+  --color-secondary-500: #F97316;
+  --color-secondary-600: #EA580C;
+
+  /* Accent: Neon Lime/Green */
+  --color-accent-500: #84CC16;
+  --color-accent-600: #65A30D;
+  --color-green-500: #10B981;
+  --color-green-50: #ECFDF5;
+
+  --color-red-500: #EF4444;
+  --color-red-50: #FEF2F2;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Radius (Rounder "Squircle" feel) */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+}
+
+/* Base Styles */
+:root {
+  --color-background: var(--color-neutral-50);
+  --color-surface: var(--color-neutral-0);
+  --color-border: var(--color-neutral-200);
+
+  --color-text-primary: var(--color-neutral-900);
+  --color-text-secondary: var(--color-neutral-600);
+
+  --color-primary: var(--color-primary-600);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Component Tokens */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+/* Buttons: Pill shape, bold colors */
+.btn {
+  height: 52px;
+  padding: 0 32px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-700));
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--color-neutral-800);
+  border: 1px solid var(--color-neutral-200);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--color-primary-400);
+  color: var(--color-primary-600);
+  transform: translateY(-1px);
+}
+
+/* Cards: Large radius, clean white or solid colors */
+.card {
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-primary {
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-800));
+  color: white;
+  border: none;
+  box-shadow: 0 10px 30px -5px rgba(79, 70, 229, 0.4);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Progress Bar Utilities */
+.progress-bg {
+  background-color: var(--color-neutral-100);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Typography Hierarchy */
+.h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-neutral-900);
+}
+
+.body-text {
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-neutral-600);
+}
+
+.label-text {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary-600);
+  letter-spacing: 0.05em;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Inputs */
+.input,
+.textarea {
+  padding: 16px;
+  border: 2px solid var(--color-neutral-100);
+  background-color: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+  width: 100%;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  background-color: white;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 4px var(--color-primary-100);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}

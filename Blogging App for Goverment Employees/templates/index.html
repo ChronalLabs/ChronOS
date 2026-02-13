@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="page-title">Latest Blogs</h1>
+
+<div class="blog-grid">
+    {% for blog in blogs %}
+        <div class="blog-card">
+            <h2>{{ blog.title }}</h2>
+
+            <p class="blog-preview">
+                {{ blog.content[:150] }}...
+            </p>
+
+            <a class="read-more" href="/blog/{{ blog.id }}">
+                Read Full Blog
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

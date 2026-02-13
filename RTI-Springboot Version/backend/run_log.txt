@@ -1,0 +1,95 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< com.rtigen:backend >-------------------------
+[INFO] Building RTI-Gen Backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ backend ---
+[INFO] Deleting C:\Users\ASUS\Desktop\RTi genrator\backend\target
+[INFO] 
+[INFO] >>> spring-boot:3.2.2:run (default-cli) > test-compile @ backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ backend ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 29 source files with javac [debug release 17] to target\classes
+[INFO] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/OpenAiAdapter.java: C:\Users\ASUS\Desktop\RTi genrator\backend\src\main\java\com\rtigen\adapter\ai\OpenAiAdapter.java uses unchecked or unsafe operations.
+[INFO] /C:/Users/ASUS/Desktop/RTi genrator/backend/src/main/java/com/rtigen/adapter/ai/OpenAiAdapter.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ backend ---
+[INFO] skip non existing resourceDirectory C:\Users\ASUS\Desktop\RTi genrator\backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ backend ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug release 17] to target\test-classes
+[INFO] 
+[INFO] <<< spring-boot:3.2.2:run (default-cli) < test-compile @ backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.2:run (default-cli) @ backend ---
+[INFO] Attaching agents: []
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.2)
+
+2026-02-01T12:17:44.763+05:30  INFO 9728 --- [rti-gen-backend] [           main] com.rtigen.RtiGenApplication             : Starting RtiGenApplication using Java 23.0.1 with PID 9728 (C:\Users\ASUS\Desktop\RTi genrator\backend\target\classes started by ASUS in C:\Users\ASUS\Desktop\RTi genrator\backend)
+2026-02-01T12:17:44.765+05:30 DEBUG 9728 --- [rti-gen-backend] [           main] com.rtigen.RtiGenApplication             : Running with Spring Boot v3.2.2, Spring v6.1.3
+2026-02-01T12:17:44.766+05:30  INFO 9728 --- [rti-gen-backend] [           main] com.rtigen.RtiGenApplication             : No active profile set, falling back to 1 default profile: "default"
+2026-02-01T12:17:45.673+05:30  INFO 9728 --- [rti-gen-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-01T12:17:45.675+05:30  INFO 9728 --- [rti-gen-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-01T12:17:45.701+05:30  INFO 9728 --- [rti-gen-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2026-02-01T12:17:46.191+05:30  INFO 9728 --- [rti-gen-backend] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-02-01T12:17:46.206+05:30  INFO 9728 --- [rti-gen-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-01T12:17:46.206+05:30  INFO 9728 --- [rti-gen-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-02-01T12:17:46.287+05:30  INFO 9728 --- [rti-gen-backend] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-01T12:17:46.288+05:30  INFO 9728 --- [rti-gen-backend] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1469 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+2026-02-01T12:17:46.580+05:30  WARN 9728 --- [rti-gen-backend] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2f825bac-6dc5-40c0-8dbe-92e47a8d76ac
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-01T12:17:47.142+05:30  INFO 9728 --- [rti-gen-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2026-02-01T12:17:47.180+05:30  INFO 9728 --- [rti-gen-backend] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2e3252, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77cddc0c, org.springframework.security.web.context.SecurityContextHolderFilter@40f9f60d, org.springframework.security.web.header.HeaderWriterFilter@f849027, org.springframework.web.filter.CorsFilter@671d97bc, org.springframework.security.web.authentication.logout.LogoutFilter@6cd45b6c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@628ba266, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1231a1be, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@774f2992, org.springframework.security.web.access.ExceptionTranslationFilter@e162a35, org.springframework.security.web.access.intercept.AuthorizationFilter@5885e231]
+2026-02-01T12:17:47.594+05:30  WARN 9728 --- [rti-gen-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-02-01T12:17:47.619+05:30  INFO 9728 --- [rti-gen-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-02-01T12:17:47.632+05:30 ERROR 9728 --- [rti-gen-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.883 s
+[INFO] Finished at: 2026-02-01T12:17:47+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.2.2:run (default-cli) on project backend: Process terminated with exit code: 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

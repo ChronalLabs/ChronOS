@@ -1,0 +1,277 @@
+.privacy-controls {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+}
+
+.privacy-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.privacy-header svg {
+  color: var(--color-success);
+}
+
+.privacy-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-heading);
+  margin: 0;
+}
+
+/* Privacy Notice */
+.privacy-notice {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background: rgba(22, 163, 74, 0.05);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 1rem;
+}
+
+.privacy-notice svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-success);
+}
+
+.privacy-notice strong {
+  font-size: 0.85rem;
+  color: var(--color-text-heading);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.privacy-notice p {
+  font-size: 0.8rem;
+  color: var(--color-text-body);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Privacy Features */
+.privacy-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-surface-light);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8rem;
+  color: var(--color-text-body);
+}
+
+.feature-icon.success {
+  color: var(--color-success);
+}
+
+/* Data Processed */
+.data-processed {
+  margin-bottom: 1rem;
+}
+
+.data-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8rem;
+  color: var(--color-text-body);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.data-toggle:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.data-list {
+  margin-top: 0.75rem;
+  padding: 0.875rem;
+  background: var(--color-surface-light);
+  border-radius: var(--border-radius-sm);
+}
+
+.data-intro {
+  font-size: 0.8rem;
+  color: var(--color-text-body);
+  margin: 0 0 0.5rem 0;
+}
+
+.data-list ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.data-list li {
+  font-size: 0.8rem;
+  color: var(--color-text-body);
+  margin-bottom: 0.25rem;
+}
+
+.data-note {
+  font-size: 0.7rem;
+  color: var(--color-success);
+  margin-left: 0.35rem;
+}
+
+/* Privacy Actions */
+.privacy-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.btn-outline {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.625rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.download-btn {
+  color: var(--color-primary);
+}
+
+.download-btn:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.delete-btn {
+  color: var(--color-error);
+}
+
+.delete-btn:hover {
+  background: var(--color-error);
+  border-color: var(--color-error);
+  color: white;
+}
+
+/* Success Message */
+.clear-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.5rem;
+  background: rgba(22, 163, 74, 0.1);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-success);
+  margin-bottom: 0.75rem;
+}
+
+/* Confirm Modal */
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.confirm-modal {
+  background: white;
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.confirm-modal .warning-icon {
+  color: var(--color-error);
+  margin-bottom: 0.75rem;
+}
+
+.confirm-modal h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-heading);
+  margin: 0 0 0.5rem 0;
+}
+
+.confirm-modal p {
+  font-size: 0.85rem;
+  color: var(--color-text-body);
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.btn-danger {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--color-error);
+  border-color: var(--color-error);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+/* Privacy Footer */
+.privacy-footer {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.privacy-footer p {
+  font-size: 0.7rem;
+  color: var(--color-text-light);
+  margin: 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .privacy-features {
+    grid-template-columns: 1fr;
+  }
+  
+  .privacy-actions {
+    flex-direction: column;
+  }
+}

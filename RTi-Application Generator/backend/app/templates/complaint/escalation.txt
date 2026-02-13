@@ -1,0 +1,53 @@
+To,
+{AUTHORITY_DESIGNATION}
+{DEPARTMENT_NAME}
+{DEPARTMENT_ADDRESS}
+
+Subject: ESCALATION - Unresolved Grievance Requiring Urgent Intervention
+
+Respected Sir/Madam,
+
+I, {APPLICANT_NAME}, a resident of {APPLICANT_ADDRESS}, am constrained to escalate the following unresolved grievance to your higher office, as my previous attempts have not yielded any satisfactory result.
+
+1. ORIGINAL COMPLAINT DETAILS:
+   - Reference/Complaint Number: {REFERENCE_NUMBER}
+   - Date of Original Complaint: {START_DATE}
+   - Authority Previously Approached: {PREVIOUS_AUTHORITY}
+
+2. SUMMARY OF GRIEVANCE:
+{GRIEVANCE_DESCRIPTION}
+
+3. CURRENT STATUS:
+Despite my complaint dated {START_DATE} to the concerned authority, the issue remains unresolved for {PROBLEM_DURATION}. No satisfactory action has been taken.
+
+4. EFFORTS MADE SO FAR:
+{PREVIOUS_ATTEMPTS}
+
+5. IMPACT OF NON-RESOLUTION:
+{IMPACT_DESCRIPTION}
+
+6. RELIEF SOUGHT:
+I respectfully but firmly request your immediate intervention to:
+- Direct the concerned officials to resolve this matter on priority
+- Ensure accountability for the delay in addressing the grievance
+- Provide a definite timeline for resolution
+- Acknowledge receipt of this escalation
+
+I have maintained patience for a considerable period, but the continued inaction has compelled me to approach your higher office. I trust that you will appreciate the gravity of the situation and take appropriate action.
+
+I am prepared to provide any additional information or attend in person if required.
+
+Thanking you,
+
+Yours faithfully,
+
+{APPLICANT_NAME}
+{APPLICANT_ADDRESS}
+{APPLICANT_CONTACT}
+
+Date: {DATE}
+Place: {PLACE}
+
+Enclosures:
+1. Copy of original complaint
+2. Any previous correspondence/acknowledgments

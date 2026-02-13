@@ -1,0 +1,68 @@
+{
+  "policy_name": "Sample Construction Policy",
+  "text_length": 793,
+  "key_sentences": [
+    "Construction permits must be displayed visibly at all work sites",
+    "Worker protection equipment is mandatory at all times",
+    "Commercial construction sites must have weekly safety inspections"
+  ],
+  "entities_extracted": {
+    "TIME": [
+      "between 8 PM and 6 AM",
+      "hours"
+    ],
+    "DATE": [
+      "weekly"
+    ],
+    "CONSTRUCTION_TYPE": [
+      "demolition work"
+    ],
+    "SAFETY_KEYWORD": [
+      "structural integrity"
+    ],
+    "TIME_EXPRESSION": [
+      "off-peak hours",
+      "peak hours"
+    ]
+  },
+  "ambiguity": {
+    "score": 26.0,
+    "trust_level": "MEDIUM - Some unclear language",
+    "critical_phrases": 4
+  },
+  "classification": {
+    "focus": "safety-focused policy that prioritizes worker and public saf",
+    "confidence": 0.8637977838516235,
+    "recommendation": "Recommend: SAFETY_PRIORITY=0.8, SPEED_PRIORITY=0.2"
+  },
+  "risk_assessment": {
+    "level": "low",
+    "flags": 0,
+    "recommendation": "\u2713 ACCEPTABLE - Low risks within tolerance."
+  },
+  "simulation_parameters": {
+    "safety_priority": 0.85,
+    "inspection_frequency_days": 3,
+    "incident_risk_multiplier": 0.5,
+    "worker_protection_level": 0.95,
+    "speed_priority": 0.65,
+    "concurrent_activities": false,
+    "overtime_allowed": true,
+    "night_shifts_allowed": false,
+    "rest_days_per_week": 1,
+    "noise_limit_db": 70,
+    "dust_limit_mg_m3": 0.5,
+    "vibration_limit_mm_s": 10,
+    "allowed_hours": "6:00-22:00",
+    "weekend_allowed": true,
+    "base_duration_days": 60,
+    "safety_criticality": "critical",
+    "approval_time_days": 45,
+    "inspection_points": 20,
+    "ambiguity_factor": 0.948
+  },
+  "overall_impact": {
+    "trade_off_score": -670.0,
+    "recommendation": "\u274c NOT RECOMMENDED - Significant risks"
+  }
+}

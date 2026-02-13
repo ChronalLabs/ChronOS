@@ -1,0 +1,25 @@
+{
+  "document_extraction": {
+    "output_dir": "data/extracted_text",
+    "supported_formats": [".pdf", ".docx", ".doc"],
+    "max_file_size_mb": 50,
+    "remove_empty_lines": true
+  },
+  "intent_extraction": {
+    "model_name": "distilbert-base-uncased",
+    "max_length": 512,
+    "top_sentences": 5
+  },
+  "policy_keywords": [
+    "night construction",
+    "safety inspection",
+    "residential zone",
+    "commercial zone",
+    "noise limits",
+    "traffic management",
+    "emergency protocols",
+    "working hours",
+    "permit requirements",
+    "compliance standards"
+  ]
+}

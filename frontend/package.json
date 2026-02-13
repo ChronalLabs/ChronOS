@@ -1,0 +1,30 @@
+{
+  "name": "civisim-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc; if ($LASTEXITCODE -eq 0) { vite build }",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.8",
+    "@react-oauth/google": "^0.13.4",
+    "axios": "^1.13.2",
+    "jwt-decode": "^4.0.0",
+    "lucide-react": "^0.561.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.11.0",
+    "recharts": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/google.maps": "^3.58.1",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8"
+  }
+}

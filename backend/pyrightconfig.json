@@ -1,0 +1,8 @@
+{
+  "include": ["."],
+  "exclude": ["**/__pycache__"],
+  "extraPaths": ["../ml"],
+  "reportMissingImports": "warning",
+  "reportMissingModuleSource": "none",
+  "pythonVersion": "3.12"
+}

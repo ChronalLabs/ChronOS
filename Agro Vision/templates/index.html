@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- ================= NAVBAR ================= -->
+<nav class="glass-navbar">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h3 class="logo">🌾 AgroVision</h3>
+        <ul class="nav-links d-none d-md-flex">
+            <li><a href="#">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#farm-map">Farm Map</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero-section">
+    <div class="hero-overlay">
+        <div class="container hero-content">
+            <h1>Smart Farming<br>Starts Here</h1>
+            <p>Select your farm location, monitor weather, and analyze soil intelligently with satellite insights.</p>
+            <div class="hero-btns">
+                <a href="#farm-map">
+                    <button class="btn-primary-custom me-3">Select Farm</button>
+                </a>
+                <button class="btn-outline-custom">Learn More</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FLOATING SEARCH ================= -->
+<div class="floating-search">
+    <input type="text" placeholder="Click below to select your farm location" readonly>
+    <a href="#farm-map">
+        <button>Go to Map</button>
+    </a>
+</div>
+
+<!-- ================= FEATURES ================= -->
+<section class="features container" id="features">
+    <h2 class="section-title">Our Smart Features</h2>
+    <div class="row g-4">
+        <div class="col-md-4 d-flex">
+            <div class="feature-card">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" alt="Mapping">
+                <h5>Farm Mapping</h5>
+                <p>Choose your farmland location using interactive satellite mapping technology.</p>
+                <button class="btn-primary-custom mt-auto">Explore</button>
+            </div>
+        </div>
+
+        <div class="col-md-4 d-flex">
+            <div class="feature-card">
+                <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b" alt="Weather">
+                <h5>Weather Insights</h5>
+                <p>Access hyper-local live weather data to support smarter crop planning decisions.</p>
+                <button class="btn-primary-custom mt-auto">View Details</button>
+            </div>
+        </div>
+
+        <div class="col-md-4 d-flex">
+            <div class="feature-card">
+                <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" alt="Soil">
+                <h5>Soil Analysis</h5>
+                <p>Understand soil composition and optimize nutrient levels for maximum yield.</p>
+                <button class="btn-primary-custom mt-auto">Analyze Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FARM MAP ================= -->
+<section class="farm-map-section" id="farm-map">
+    <div class="container">
+        <h2 class="section-title">Select Your Farm Location</h2>
+
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div id="map"></div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="farm-details-card">
+                    <h4>Farm Details</h4>
+
+                    <div class="detail-item">
+                        <strong>Latitude</strong>
+                        <span id="lat">Not Selected</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <strong>Longitude</strong>
+                        <span id="lng">Not Selected</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <strong>Status</strong>
+                        <span class="status-badge">Ready</span>
+                    </div>
+
+                    <button class="btn-primary-custom w-100 mt-4 py-3">
+                        Analyze Farm Data
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weather Info Appears Here -->
+        <div id="weather-info" class="mt-4"></div>
+
+    </div>
+</section>
+
+
+<!-- ================= FORECAST ANALYTICS ================= -->
+<section class="forecast-section">
+    <div class="container">
+        <h2 class="section-title">Weather Forecast Analytics</h2>
+
+        <div class="row g-4">
+
+            <!-- Temperature Chart -->
+            <div class="col-lg-6">
+                <div class="chart-card">
+                    <h5>🌡 Temperature Forecast</h5>
+                    <canvas id="tempChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Rainfall Chart -->
+            <div class="col-lg-6">
+                <div class="chart-card">
+                    <h5>🌧 Rainfall Probability</h5>
+                    <canvas id="rainChart"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,438 @@
+/* ================= GLOBAL & THEME ================= */
+:root {
+    --primary: #2e7d32;
+    --primary-dark: #1b5e20;
+    --accent: #bdef1a;
+    --bg-light: #f8faf7;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --white: #ffffff;
+    --border: #e0e6ed;
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --percent: 0;
+    --rain: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= NAVBAR ================= */
+.glass-navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+}
+
+.logo {
+    font-weight: 800;
+    color: var(--primary) !important;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-muted) !important;
+    font-size: 0.95rem;
+}
+
+/* ================= HERO ================= */
+.hero-section {
+    height: 85vh;
+    background: url("https://images.unsplash.com/photo-1500382017468-9049fed747ef") center/cover no-repeat;
+    position: relative;
+}
+
+.hero-overlay {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+}
+
+/* ================= FLOATING SEARCH ================= */
+.floating-search {
+    width: 80%;
+    max-width: 800px;
+    background: var(--white);
+    margin: -40px auto 0 auto;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    gap: 10px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    z-index: 5;
+    border: 1px solid var(--border);
+}
+
+.floating-search input {
+    flex: 1;
+    border: none;
+    padding: 15px 20px;
+    outline: none;
+}
+
+.floating-search button {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 0 30px;
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+/* ================= FEATURES ================= */
+.features {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: var(--primary-dark);
+}
+
+.feature-card {
+    background: var(--white);
+    border-radius: 25px;
+    padding: 25px;
+    border: 1px solid var(--border);
+    transition: 0.4s;
+    flex-direction: column;
+    display: flex;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.feature-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 20px;
+}
+
+/* ================= BUTTONS ================= */
+.btn-primary-custom {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-outline-custom {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    padding: 10px 30px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* ================= MAP & DETAILS ================= */
+.farm-map-section {
+    padding: 100px 0;
+    background: #edf3ed;
+}
+
+#map {
+    height: 550px;
+    width: 100%;
+    border-radius: 25px;
+    border: 8px solid var(--white);
+    box-shadow: var(--shadow-md);
+    z-index: 1;
+}
+
+.farm-details-card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: var(--shadow-md);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.status-badge {
+    background: #e8f5e9;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--primary);
+}
+
+/* ================= CLIMATE DASHBOARD ================= */
+.climate-dashboard {
+    background: #f4faf4;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.05), -8px -8px 20px rgba(255, 255, 255, 0.9);
+    animation: fadeInUp 0.6s ease;
+    margin-top: 2rem;
+}
+
+.climate-header h5 {
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.climate-main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Gauge Styles */
+.gauge {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(var(--primary) calc(var(--percent) * 1%), #e8f5e9 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gauge-inner {
+    width: 110px;
+    height: 110px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hot-glow .gauge {
+    box-shadow: 0 0 20px rgba(46, 125, 50, 0.4);
+}
+
+/* Humidity Bar */
+.humidity-bar {
+    width: 50px;
+    height: 150px;
+    background: #e8f5e9;
+    border-radius: 25px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.humidity-fill {
+    width: 100%;
+    background: linear-gradient(to top, var(--primary), var(--accent));
+    transition: height 1s ease;
+}
+
+/* Rain Ring */
+.rain-ring {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: conic-gradient(var(--accent) calc(var(--rain) * 1%), #e8f5e9 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rain-inner {
+    width: 95px;
+    height: 95px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wind-box {
+    margin-top: 25px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+    .climate-main {
+        flex-direction: column;
+    }
+}
+
+
+
+/* ================= CROP INTELLIGENCE PANEL ================= */
+
+.crop-panel {
+    margin-top: 35px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow:
+        5px 5px 15px rgba(0,0,0,0.05),
+        -5px -5px 15px rgba(255,255,255,0.8);
+}
+
+.crop-panel h6 {
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.crop-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.crop-tag {
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #e8f5e9;
+    color: var(--primary-dark);
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.advice-box {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.risk-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+.risk-low {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.risk-medium {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.risk-high {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+
+
+.chart-container {
+    margin-top: 40px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow:
+        5px 5px 15px rgba(0,0,0,0.05),
+        -5px -5px 15px rgba(255,255,255,0.8);
+}
+
+
+
+
+/* ================= FORECAST SECTION ================= */
+
+.forecast-section {
+    padding: 100px 0;
+    background: #f8faf7;
+}
+
+.chart-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.05),
+                -5px -5px 15px rgba(255,255,255,0.8);
+    transition: 0.4s;
+    animation: fadeInUp 0.6s ease;
+}
+
+.chart-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.chart-card h5 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.chart-card canvas {
+    width: 100% !important;
+    height: 300px !important;
+}

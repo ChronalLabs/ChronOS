@@ -1,287 +1,290 @@
-# 🌍 Eco-Guard AI  
-## Smart Environmental Intelligence & AQI Prediction System
+# 🌍 Eco-Guard AI
 
----
+### Smart Environmental Intelligence & AQI Prediction Platform
 
-## 📌 Abstract
+**Eco-Guard AI** is a Machine Learning--powered environmental
+intelligence system that predicts **Air Quality Index (AQI)** using
+pollutant concentration data and transforms complex environmental
+information into **clear health insights, visual analytics, and
+downloadable professional reports** through a modern web application.
 
-Eco-Guard AI is a Machine Learning powered environmental intelligence platform designed to predict Air Quality Index (AQI) using pollutant concentration data and provide actionable health advisory insights. The system transforms complex environmental data into understandable predictions, visual analytics, and downloadable professional reports through a modern multi-page web application.
+Developed as part of the **ChronalLabs open-source ecosystem**, this
+project aims to make **air quality awareness accessible to citizens,
+researchers, and policymakers**.
 
-This project aims to bridge the gap between environmental data and public awareness by making air quality analytics accessible to common citizens, researchers, and policymakers.
+------------------------------------------------------------------------
 
----
+# 📌 Overview
 
-# 1️⃣ Problem Statement
+Air pollution is one of the most critical global environmental
+challenges.\
+Urban regions frequently experience hazardous AQI levels due to:
 
-Air pollution has emerged as one of the most severe environmental challenges globally. Urban regions frequently experience hazardous AQI levels due to:
+-   Industrial emissions\
+-   Vehicular pollution\
+-   Construction dust\
+-   Fossil fuel burning\
+-   Seasonal environmental factors
 
-- Industrial emissions  
-- Vehicular pollution  
-- Construction dust  
-- Burning of fossil fuels  
-- Seasonal environmental factors  
+Cities like **Delhi, Ahmedabad, and Lucknow** regularly report
+**unhealthy to severe AQI levels**, highlighting the urgent need for
+**data-driven public awareness tools**.
 
-Cities such as Delhi, Ahmedabad, and Lucknow often report AQI values reaching unhealthy or severe levels.
+------------------------------------------------------------------------
 
-### ❗ Core Issues Identified
+# ❗ Core Challenges
 
-1. AQI numbers are not easily interpretable by common users.  
-2. People lack real-time understanding of health risks.  
-3. Environmental data is complex and scattered.  
-4. There is no simplified AI-based prediction interface for the public.  
-5. Data-driven environmental awareness tools are limited.  
+-   AQI numbers are difficult for the general public to interpret\
+-   Limited real-time understanding of health risks\
+-   Environmental datasets are scattered and complex\
+-   Lack of simplified AI-based AQI prediction tools\
+-   Insufficient accessible environmental analytics platforms
 
----
+------------------------------------------------------------------------
 
-# 2️⃣ Project Objective
+# 🎯 Project Objectives
 
-The primary objective of Eco-Guard AI is to:
+Eco-Guard AI is designed to:
 
-- Predict AQI using pollutant parameters  
-- Classify AQI into health risk categories  
-- Provide environmental awareness insights  
-- Visualize data patterns using interactive charts  
-- Generate downloadable professional environmental reports  
+-   Predict AQI using pollutant parameters\
+-   Classify AQI into **health-risk categories**\
+-   Provide **environmental awareness insights**\
+-   Visualize pollution trends with **interactive charts**\
+-   Generate **downloadable professional PDF reports**
 
----
+------------------------------------------------------------------------
 
-# 3️⃣ Proposed Solution
+# 🧠 Solution Architecture
 
-Eco-Guard AI provides a web-based intelligent system that:
+    Pollutant Input
+          ↓
+    Data Preprocessing
+          ↓
+    Random Forest ML Model
+          ↓
+    AQI Prediction
+          ↓
+    Health Risk Classification
+          ↓
+    Visual Insights + PDF Report
 
-1. Accepts pollutant values as input  
-2. Uses a trained Machine Learning model to predict AQI  
-3. Categorizes air quality into standard health buckets  
-4. Displays interactive data insights  
-5. Generates structured PDF environmental assessment reports  
+------------------------------------------------------------------------
 
----
+# 📊 Dataset
 
-# 4️⃣ System Architecture
+**Source:** Kaggle -- India Air Quality Dataset\
+**Primary File:** `city_day.csv`
 
-```
-User Input (Pollutants)
-        ↓
-Data Preprocessing
-        ↓
-Machine Learning Model (Random Forest)
-        ↓
-AQI Prediction
-        ↓
-Health Risk Classification
-        ↓
-Visualization & Insights
-        ↓
-PDF Report Generation
-```
+### Key Features
 
----
+  Feature   Description
+  --------- ------------------------------------
+  PM2.5     Fine particulate matter (≤ 2.5µm)
+  PM10      Coarse particulate matter (≤ 10µm)
+  NO₂       Nitrogen dioxide
+  CO        Carbon monoxide
+  SO₂       Sulfur dioxide
+  O₃        Ozone
+  AQI       Target variable
 
-# 5️⃣ Dataset Description
+------------------------------------------------------------------------
 
-Dataset Source: Kaggle Air Quality Dataset (India)
+# ⚙️ Methodology
 
-Primary file used:
-- city_day.csv
+## 1. Data Preprocessing
 
-### Important Features Used
+-   Feature selection for major pollutants\
+-   Missing value handling\
+-   Train--test split (**80/20**)
 
-| Feature | Description |
-|----------|-------------|
-| PM2.5 | Fine particulate matter (≤2.5µm) |
-| PM10 | Coarse particulate matter (≤10µm) |
-| NO2 | Nitrogen dioxide |
-| CO | Carbon monoxide |
-| SO2 | Sulfur dioxide |
-| O3 | Ozone |
-| AQI | Air Quality Index (Target Variable) |
+## 2. Model Selection
 
----
+**Algorithm:** RandomForestRegressor
 
-# 6️⃣ Methodology
+**Why Random Forest?** - Captures nonlinear relationships\
+- Strong performance on tabular environmental data\
+- Resistant to overfitting\
+- Provides **feature importance insights**
 
-## Step 1: Data Preprocessing
+## 3. Evaluation Metrics
 
-- Selection of relevant pollutant features  
-- Handling missing values  
-- Feature-target separation  
-- Train-test split (80-20)  
+-   **R² Score**\
+-   **Mean Squared Error (MSE)**
 
-## Step 2: Model Selection
+## 4. Model Persistence
 
-Algorithm Used:
-- RandomForestRegressor
+-   Saved using **joblib**\
+-   Dynamically loaded in the **Streamlit app**
 
-Reason:
-- Handles nonlinear relationships  
-- Works well with tabular environmental data  
-- Robust against overfitting  
-- Provides feature importance scores  
+------------------------------------------------------------------------
 
-## Step 3: Model Evaluation
+# 🖥️ Application Features
 
-Metrics Used:
-- R² Score  
-- Mean Squared Error  
+## 🏠 Home
 
-## Step 4: Model Persistence
+-   Project introduction\
+-   Environmental awareness content\
+-   Importance of pollution monitoring
 
-- Model saved using joblib  
-- Loaded dynamically in the Streamlit application  
+## 📈 AQI Prediction
 
----
+-   Slider-based pollutant inputs\
+-   Real-time ML AQI prediction\
+-   Color-coded health category display
 
-# 7️⃣ Application Features
+## 📊 Model Insights
 
-## 🏠 Home Page
-- Project overview  
-- Environmental awareness section  
-- Importance of pollution monitoring  
+-   R² performance score\
+-   Feature importance visualization\
+-   Correlation heatmap
 
-## 📈 AQI Prediction Page
-- Slider-based pollutant input  
-- Machine learning-based AQI prediction  
-- Color-coded result display  
-- Health category classification  
+## 📥 Report Generation
 
-## 📊 Model Insights Page
-- R² Accuracy Score  
-- Feature Importance Visualization  
-- Correlation Heatmap  
+-   Downloadable **professional PDF report**\
+-   AQI value, city name, and health advisory\
+-   Embedded charts and analytics
 
-## 📥 Report Generation Page
-- Professional PDF Environmental Report  
-- City name and AQI value  
-- Health advisory section  
-- Embedded feature importance chart  
+------------------------------------------------------------------------
 
----
+# 🚦 Health Risk Classification
 
-# 8️⃣ Health Risk Classification Logic
+  AQI Range   Category    Health Impact
+  ----------- ----------- ---------------------------
+  0--50       Good        Minimal impact
+  51--100     Moderate    Acceptable
+  101--200    Poor        Sensitive groups affected
+  201--300    Very Poor   Respiratory discomfort
+  301+        Severe      Serious health effects
 
-| AQI Range | Category | Health Impact |
-|------------|-----------|---------------|
-| 0–50 | Good | Minimal impact |
-| 51–100 | Moderate | Acceptable |
-| 101–200 | Poor | Sensitive groups affected |
-| 201–300 | Very Poor | Respiratory discomfort |
-| 301+ | Severe | Serious health effects |
+------------------------------------------------------------------------
 
----
-
-# 9️⃣ Technologies Used
+# 🛠️ Tech Stack
 
 ### Frontend
-- Streamlit  
-- Plotly  
-- Matplotlib  
-- Seaborn  
+
+-   Streamlit\
+-   Plotly\
+-   Matplotlib\
+-   Seaborn
 
 ### Backend
-- Python  
-- Pandas  
-- NumPy  
-- Scikit-learn  
 
-### Report Generation
-- ReportLab  
-- Kaleido  
+-   Python\
+-   Pandas, NumPy\
+-   Scikit-learn
 
----
+### Reporting
 
-# 🔟 Project Structure
+-   ReportLab\
+-   Kaleido
 
-```
-EcoGuard/
-│
-├── app.py
-├── train_model.py
-├── requirements.txt
-│
-├── data/
-│   └── city_day.csv
-│
-├── model/
-│   └── aqi_model.pkl
-│
-├── assets/
-│   └── style.css
-│
-├── pages/
-│   ├── 1_Home.py
-│   ├── 2_Predict_AQI.py
-│   ├── 3_Model_Insights.py
-│   └── Report_Download.py
-│
-└── utils/
-    ├── helper.py
-    └── report_generator.py
-```
+------------------------------------------------------------------------
 
----
+# 📁 Project Structure
 
-# 1️⃣1️⃣ How to Run the Project
+    EcoGuard/
+    │
+    ├── app.py
+    ├── train_model.py
+    ├── requirements.txt
+    │
+    ├── data/
+    │   └── city_day.csv
+    │
+    ├── model/
+    │   └── aqi_model.pkl
+    │
+    ├── assets/
+    │   └── style.css
+    │
+    ├── pages/
+    │   ├── 1_Home.py
+    │   ├── 2_Predict_AQI.py
+    │   ├── 3_Model_Insights.py
+    │   └── Report_Download.py
+    │
+    └── utils/
+        ├── helper.py
+        └── report_generator.py
 
-### Step 1: Create Virtual Environment
-```
+------------------------------------------------------------------------
+
+# 🚀 Getting Started
+
+### 1️⃣ Create Virtual Environment
+
+``` bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-### Step 2: Install Dependencies
-```
+### 2️⃣ Install Dependencies
+
+``` bash
 pip install -r requirements.txt
 ```
 
-### Step 3: Train the Model
-```
+### 3️⃣ Train the Model
+
+``` bash
 python train_model.py
 ```
 
-### Step 4: Run the Application
-```
+### 4️⃣ Run the App
+
+``` bash
 streamlit run app.py
 ```
 
----
+------------------------------------------------------------------------
 
-# 1️⃣2️⃣ Impact & Use Cases
+# 🌱 Impact
 
-## For Citizens
-- Understand pollution risks  
-- Plan outdoor activities  
-- Access downloadable environmental reports  
+### Citizens
 
-## For Students & Researchers
-- Analyze pollutant correlations  
-- Study feature importance  
-- Understand ML model application in environmental science  
+-   Understand pollution risks\
+-   Plan safe outdoor activities\
+-   Access downloadable AQI reports
 
-## For Policymakers
-- Identify major pollution contributors  
-- Support data-driven environmental decisions  
+### Students & Researchers
 
----
+-   Study pollutant correlations\
+-   Explore ML feature importance\
+-   Learn real-world ML deployment
 
-# 1️⃣3️⃣ Future Enhancements
+### Policymakers
 
-- Real-time AQI API integration  
-- City-wise historical trend analysis  
-- Cloud deployment  
-- User authentication system  
-- Full production React + FastAPI version  
-- Multi-model comparison dashboard  
+-   Identify pollution contributors\
+-   Enable **data-driven environmental decisions**
 
----
+------------------------------------------------------------------------
 
-# 1️⃣4️⃣ Conclusion
+# 🔮 Future Roadmap
 
-Eco-Guard AI demonstrates the practical application of Machine Learning in solving real-world environmental problems. By converting raw pollution data into actionable insights and professional reports, the system contributes toward increased environmental awareness and data-driven decision-making.
-This project showcases the integration of data science, machine learning, visualization, and web deployment into a single intelligent environmental platform.
+-   Real-time AQI API integration\
+-   Historical city-wise trend analytics\
+-   Cloud deployment (Docker + CI/CD)\
+-   User authentication & dashboards\
+-   React + FastAPI production architecture\
+-   Multi-model comparison system
 
----
+------------------------------------------------------------------------
+
+# 🏁 Conclusion
+
+**Eco-Guard AI** demonstrates how Machine Learning, visualization, and
+web technologies can combine to solve **real-world environmental
+challenges**.\
+By converting raw pollution data into **clear insights and professional
+reports**, the platform strengthens **environmental awareness and
+data-driven decision-making**.
+
+------------------------------------------------------------------------
 
 # 👨‍💻 Author
-Developer - Ananya Sharma
-linkedin - https://www.linkedin.com/in/ananya-sharma-dev/
-Developed as a Machine Learning & Environmental Intelligence Project.
+
+**Ananya Sharma**\
+Machine Learning & Environmental Intelligence Developer
+
+🔗 LinkedIn:\
+https://www.linkedin.com/in/ananya-sharma-dev/

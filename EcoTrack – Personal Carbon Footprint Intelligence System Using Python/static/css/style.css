@@ -1,0 +1,17 @@
+body {
+    background-color: #f4e8d5;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.custom-navbar {
+    background-color: #243c3f;
+}
+
+.hero-section {
+    background-color: #84a98c;
+    padding: 80px 0;
+}
+
+.card {
+    border-radius: 15px;
+}

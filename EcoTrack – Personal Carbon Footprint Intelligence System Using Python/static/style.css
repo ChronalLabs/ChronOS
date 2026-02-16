@@ -1,0 +1,95 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #dfe9f3, #ffffff);
+    color: #1c1c3c;
+}
+
+/* Navbar */
+.navbar {
+    background: transparent;
+    padding: 20px 40px;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 24px;
+    color: #2c2c6c;
+}
+
+.nav-link {
+    font-weight: 600;
+    color: #2c2c6c;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: 800;
+    color: #2c2c6c;
+}
+
+.hero span {
+    color: #4da8da;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Card */
+.card-custom {
+    background: white;
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* Buttons */
+.btn-primary-custom {
+    background: #4da8da;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    color: white;
+}
+
+.btn-primary-custom:hover {
+    background: #2c2c6c;
+}
+
+/* Result Circle */
+.result-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4da8da, #2c2c6c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .card-custom {
+        padding: 20px;
+    }
+}

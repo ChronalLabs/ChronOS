@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EcoTrack - Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="font-family: Arial, sans-serif; background:#f4f6f9; margin:0; padding:0;">
+
+<div style="max-width:900px; margin:40px auto; background:white; padding:30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+
+    <h1 style="text-align:center; color:#2c3e50;">🌍 Your Carbon Footprint Report</h1>
+
+    <!-- TOTAL EMISSION CARD -->
+    <div style="margin-top:30px; padding:20px; border-radius:8px; background:#ecf0f1; text-align:center;">
+        <h2 style="margin:0; color:#34495e;">Total Emissions</h2>
+        <h1 style="margin:10px 0; color:#e74c3c;">
+            {{ result.total }} kg CO₂ / month
+        </h1>
+
+        {% if result.total < 150 %}
+            <p style="color:green; font-weight:bold;">✅ Excellent! Very Low Carbon Footprint</p>
+        {% elif result.total < 300 %}
+            <p style="color:orange; font-weight:bold;">⚠ Moderate Emissions – Can Improve</p>
+        {% else %}
+            <p style="color:red; font-weight:bold;">🚨 High Emissions – Action Recommended</p>
+        {% endif %}
+    </div>
+
+    <!-- BREAKDOWN SECTION -->
+    <div style="margin-top:40px;">
+        <h2 style="color:#2c3e50;">📊 Emission Breakdown</h2>
+
+        <div style="display:flex; justify-content:space-between; margin-top:20px;">
+            <div style="width:30%; padding:15px; background:#dff9fb; border-radius:8px; text-align:center;">
+                <h3>🚗 Travel</h3>
+                <p style="font-size:20px; font-weight:bold;">
+                    {{ result.travel }} kg
+                </p>
+            </div>
+
+            <div style="width:30%; padding:15px; background:#f6e58d; border-radius:8px; text-align:center;">
+                <h3>💡 Electricity</h3>
+                <p style="font-size:20px; font-weight:bold;">
+                    {{ result.electricity }} kg
+                </p>
+            </div>
+
+            <div style="width:30%; padding:15px; background:#badc58; border-radius:8px; text-align:center;">
+                <h3>🍽 Diet</h3>
+                <p style="font-size:20px; font-weight:bold;">
+                    {{ result.diet }} kg
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHART SECTION -->
+    <div style="margin-top:50px;">
+        <h2 style="color:#2c3e50;">📈 Visual Analytics</h2>
+        <canvas id="carbonChart" height="120"></canvas>
+    </div>
+
+    <!-- RECOMMENDATIONS -->
+    <div style="margin-top:50px;">
+        <h2 style="color:#2c3e50;">🌱 Personalized Recommendations</h2>
+        <ul style="line-height:1.8;">
+            {% for tip in recommendations %}
+                <li>{{ tip }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div style="margin-top:40px; text-align:center;">
+        <a href="/"
+           style="padding:10px 20px; background:#3498db; color:white; text-decoration:none; border-radius:5px;">
+           🔄 Calculate Again
+        </a>
+
+        <a href="/history"
+           style="padding:10px 20px; background:#2ecc71; color:white; text-decoration:none; border-radius:5px; margin-left:10px;">
+           📜 View History
+        </a>
+    </div>
+
+</div>
+
+<!-- CHART SCRIPT -->
+<script>
+    const travel = Number("{{ result.travel }}");
+    const electricity = Number("{{ result.electricity }}");
+    const diet = Number("{{ result.diet }}");
+
+    const ctx = document.getElementById('carbonChart').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Travel", "Electricity", "Diet"],
+            datasets: [{
+                label: "Carbon Emissions (kg CO₂)",
+                data: [travel, electricity, diet],
+                backgroundColor: [
+                    "rgba(231, 76, 60, 0.7)",
+                    "rgba(241, 196, 15, 0.7)",
+                    "rgba(46, 204, 113, 0.7)"
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+</script>
+
+
+</body>
+</html>

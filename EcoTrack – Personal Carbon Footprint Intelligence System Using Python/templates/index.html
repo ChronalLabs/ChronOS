@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+    <h1>CARBON <span>FOOTPRINT</span></h1>
+    <p>Track your environmental impact in seconds.</p>
+</section>
+
+<div class="container mb-5">
+    <div class="card-custom">
+
+        <form action="/result" method="POST">
+
+            <div class="mb-3">
+                <label>Monthly Travel Distance (km) [MAX == 100]</label>
+                <input type="number" name="distance" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Travel Mode</label>
+                <select name="travel_mode" class="form-control">
+                    <option value="car">Car</option>
+                    <option value="bus">Bus</option>
+                    <option value="train">Train</option>
+                    <option value="flight">Flight</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label>Monthly Electricity Usage (kWh)</label>
+                <input type="number" name="electricity" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Diet Type</label>
+                <select name="diet" class="form-control">
+                    <option value="vegan">Vegan</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="nonveg">Non-Veg</option>
+                </select>
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn-primary-custom">Calculate</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

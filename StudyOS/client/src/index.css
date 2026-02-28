@@ -1,76 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import "tailwindcss";
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @theme {
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
 
-  --color-brand-primary: #4F46E5;
-  --color-brand-secondary: #818CF8;
-  --color-brand-dark: #1E1E2D;
-  --color-brand-light: #F5F6FA;
-  --color-text-main: #333333;
-  --color-text-secondary: #828282;
+  /* Modern SaaS Light Theme / Neumorphic */
+  --color-background: #F4F7FE;  /* Very soft blue-grey background */
+  --color-surface: #FFFFFF;     /* Pure white for cards */
+  --color-surface-hover: #F8FAFC; /* Slight tint on hover */
+  
+  --color-primary: #10B981;     /* Vibrant Modern Green */
+  --color-primary-dark: #059669; /* Darker green for hover */
+  --color-primary-light: #D1FAE5; /* Pale green for backgrounds */
+
+  /* Text Colors */
+  --color-text-main: #1E293B;    /* Dark slate for main text */
+  --color-text-secondary: #475569; /* Medium slate for secondary */
+  --color-text-muted: #94A3B8;     /* Muted grey */
+
+  --color-border: #E2E8F0;       /* Very soft border */
+
+  /* Neumorphic/Soft Shadows */
+  --shadow-soft: 6px 6px 12px #e2e6f0, -6px -6px 12px #ffffff;
+  --shadow-card: 10px 10px 20px #e2e6f0, -10px -10px 20px #ffffff;
+  --shadow-float: 15px 15px 30px #e2e6f0, -15px -15px 30px #ffffff;
+  --shadow-glow: 0 4px 14px rgba(16, 185, 129, 0.4); /* Green glow */
 }
 
 @layer base {
-  body {
-    @apply bg-brand-light text-text-main font-sans antialiased;
+  html, body {
+    overflow-x: hidden;
+}
+
+body {
+    @apply bg-background text-text-main font-sans antialiased;
   }
 }
 
-/* ── Right Panel: Glassmorphism Card ─────────────────────────────── */
-.glass-card {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 2px 16px rgba(79, 70, 229, 0.04), 0 1px 4px rgba(0, 0, 0, 0.03);
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-.glass-card:hover {
-  box-shadow: 0 4px 24px rgba(79, 70, 229, 0.08), 0 1px 6px rgba(0, 0, 0, 0.04);
-  border-color: rgba(79, 70, 229, 0.12);
+@layer components {
+    .btn-primary {
+        @apply bg-primary text-white px-6 py-3 rounded-2xl font-bold shadow-glow hover:bg-primary-dark active:scale-95 transition-all duration-200;
+    }
+    
+    .card {
+        @apply bg-surface rounded-2xl shadow-card border border-white/50 p-6 hover:shadow-float transition-all duration-300;
+    }
+
+    .input-field {
+        @apply w-full bg-surface border-none rounded-xl px-4 py-3 text-text-main placeholder-text-muted outline-none shadow-inner focus:ring-2 focus:ring-primary/50 transition-all;
+    }
+
+    .sidebar-link {
+        @apply flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 font-medium text-text-muted hover:text-text-main hover:bg-surface-hover;
+    }
+
+    .sidebar-link-active {
+        @apply bg-primary/10 text-primary font-semibold;
+    }
 }
 
-/* ── Profile Glow Ring (active user pulse) ───────────────────────── */
-.profile-glow {
-  box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.45);
-  animation: glow-pulse 2.5s ease-in-out infinite;
-}
-@keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 0 0px rgba(79, 70, 229, 0.4); }
-  50%      { box-shadow: 0 0 0 8px rgba(79, 70, 229, 0); }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
 }
 
-/* ── Live Timer Dot Blink ────────────────────────────────────────── */
-.timer-pulse {
-  animation: timer-blink 1.4s ease-in-out infinite;
-}
-@keyframes timer-blink {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0.35; }
+::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-/* ── SVG Progress Ring Transition ────────────────────────────────── */
-.progress-ring-circle {
-  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 10px;
 }
 
-/* ── Right Panel Custom Scrollbar ────────────────────────────────── */
-.right-panel-scroll::-webkit-scrollbar {
-  width: 4px;
+::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
 }
-.right-panel-scroll::-webkit-scrollbar-track {
-  background: transparent;
-}
-.right-panel-scroll::-webkit-scrollbar-thumb {
-  background: rgba(79, 70, 229, 0.15);
-  border-radius: 99px;
-}
-.right-panel-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(79, 70, 229, 0.3);
-}
-.right-panel-scroll {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(79, 70, 229, 0.15) transparent;
-}
+
+
+
+
+

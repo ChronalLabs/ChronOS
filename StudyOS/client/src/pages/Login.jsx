@@ -35,20 +35,20 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-brand-light relative overflow-hidden">
+        <div className="min-h-screen flex items-center justify-center bg-background text-text-main relative overflow-hidden">
             {/* Minimal Background Decor */}
-            <div className="absolute -top-20 -right-20 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-brand-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary-light rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-blue-100 rounded-full blur-3xl pointer-events-none"></div>
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-white p-8 rounded-3xl shadow-xl w-full max-w-5xl z-10 flex flex-col md:flex-row gap-12 border border-gray-100"
+                className="bg-surface p-8 rounded-3xl shadow-float w-full max-w-5xl z-10 flex flex-col md:flex-row gap-12"
             >
                 {/* Left Side: Character & Welcome */}
-                <div className="w-full md:w-5/12 flex flex-col items-center justify-center bg-brand-light/50 rounded-2xl p-8 border border-gray-100">
+                <div className="w-full md:w-5/12 flex flex-col items-center justify-center bg-background shadow-inner rounded-2xl p-8">
                     <Character state={formData.email || formData.password ? 'typing' : 'idle'} />
-                    <h3 className="mt-6 text-2xl font-bold text-gray-800 text-center">
+                    <h3 className="mt-6 text-2xl font-bold text-text-main text-center">
                         {isLogin ? "Welcome Back!" : "Join StudyOS"}
                     </h3>
                     <p className="mt-2 text-text-secondary text-center text-sm leading-relaxed">
@@ -61,7 +61,7 @@ const Login = () => {
                 {/* Right Side: Form */}
                 <div className="w-full md:w-7/12 flex flex-col justify-center py-4">
                     <div className="mb-8">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                        <h2 className="text-3xl font-bold text-text-main mb-2">
                             {isLogin ? 'Sign In' : 'Create Account'}
                         </h2>
                         <p className="text-text-secondary">
@@ -72,52 +72,52 @@ const Login = () => {
                     <form onSubmit={handleSubmit} className="space-y-5">
                         {!isLogin && (
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-1">Username</label>
+                                <label className="block text-sm font-medium text-text-secondary mb-1">Username</label>
                                 <input
                                     type="text"
                                     name="username"
                                     value={formData.username}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition-all placeholder-gray-400"
+                                    className="w-full px-4 py-3 bg-background shadow-inner rounded-xl focus:ring-2 focus:ring-primary focus:outline-none transition-all placeholder-text-muted text-text-main"
                                     placeholder="e.g., Alex Carter"
                                     required
                                 />
                             </div>
                         )}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Email <span className="text-red-400">*</span></label>
+                            <label className="block text-sm font-medium text-text-secondary mb-1">Email <span className="text-red-400">*</span></label>
                             <input
                                 type="email"
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition-all placeholder-gray-400"
+                                className="w-full px-4 py-3 bg-background shadow-inner rounded-xl focus:ring-2 focus:ring-primary focus:outline-none transition-all placeholder-text-muted text-text-main"
                                 placeholder="name@example.com"
                                 required
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Password <span className="text-red-400">*</span></label>
+                            <label className="block text-sm font-medium text-text-secondary mb-1">Password <span className="text-red-400">*</span></label>
                             <input
                                 type="password"
                                 name="password"
                                 value={formData.password}
                                 onChange={handleChange}
-                                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent outline-none transition-all placeholder-gray-400"
+                                className="w-full px-4 py-3 bg-background shadow-inner rounded-xl focus:ring-2 focus:ring-primary focus:outline-none transition-all placeholder-text-muted text-text-main"
                                 placeholder="••••••••"
                                 required
                             />
                         </div>
 
                         {error && (
-                            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">
+                            <div className="bg-red-50 text-red-600 px-4 py-3 rounded-xl text-sm shadow-inner">
                                 {error}
                             </div>
                         )}
 
                         <button
                             type="submit"
-                            className="w-full bg-brand-primary hover:bg-indigo-700 text-white font-semibold py-3.5 rounded-xl transition-all duration-200 mt-2 shadow-lg shadow-brand-primary/30 hover:shadow-brand-primary/40 active:scale-[0.98]"
+                            className="w-full btn-primary mt-2"
                         >
                             {isLogin ? 'Sign In' : 'Create Account'}
                         </button>
@@ -127,7 +127,7 @@ const Login = () => {
                         {isLogin ? "New to StudyOS? " : "Already have an account? "}
                         <button
                             onClick={() => setIsLogin(!isLogin)}
-                            className="text-brand-primary font-semibold hover:underline"
+                            className="text-primary font-semibold hover:underline"
                         >
                             {isLogin ? 'Create an account' : 'Sign in'}
                         </button>

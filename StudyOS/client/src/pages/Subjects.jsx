@@ -24,9 +24,9 @@ const Subjects = () => {
             name: 'Advanced Mathematics',
             icon: '📐',
             color: 'from-indigo-500 to-purple-500',
-            bgLight: 'bg-indigo-50',
-            textColor: 'text-indigo-600',
-            borderColor: 'border-indigo-100',
+            bgLight: 'bg-indigo-500/10',
+            textColor: 'text-indigo-400',
+            borderColor: 'border-indigo-500/20',
             progress: 60,
             totalChapters: 12,
             completedChapters: 7,
@@ -49,9 +49,9 @@ const Subjects = () => {
             name: 'Physics - Quantum Mechanics',
             icon: '⚛️',
             color: 'from-cyan-500 to-blue-500',
-            bgLight: 'bg-cyan-50',
-            textColor: 'text-cyan-600',
-            borderColor: 'border-cyan-100',
+            bgLight: 'bg-cyan-500/10',
+            textColor: 'text-cyan-400',
+            borderColor: 'border-cyan-500/20',
             progress: 30,
             totalChapters: 10,
             completedChapters: 3,
@@ -73,9 +73,9 @@ const Subjects = () => {
             name: 'Organic Chemistry',
             icon: '🧪',
             color: 'from-emerald-500 to-green-500',
-            bgLight: 'bg-emerald-50',
-            textColor: 'text-emerald-600',
-            borderColor: 'border-emerald-100',
+            bgLight: 'bg-emerald-500/10',
+            textColor: 'text-emerald-400',
+            borderColor: 'border-emerald-500/20',
             progress: 15,
             totalChapters: 14,
             completedChapters: 2,
@@ -96,9 +96,9 @@ const Subjects = () => {
             name: 'Data Structures & Algorithms',
             icon: '💻',
             color: 'from-orange-500 to-amber-500',
-            bgLight: 'bg-orange-50',
-            textColor: 'text-orange-600',
-            borderColor: 'border-orange-100',
+            bgLight: 'bg-orange-500/10',
+            textColor: 'text-orange-400',
+            borderColor: 'border-orange-500/20',
             progress: 85,
             totalChapters: 8,
             completedChapters: 7,
@@ -121,9 +121,9 @@ const Subjects = () => {
             name: 'English Literature',
             icon: '📚',
             color: 'from-rose-500 to-pink-500',
-            bgLight: 'bg-rose-50',
-            textColor: 'text-rose-600',
-            borderColor: 'border-rose-100',
+            bgLight: 'bg-rose-500/10',
+            textColor: 'text-rose-400',
+            borderColor: 'border-rose-500/20',
             progress: 100,
             totalChapters: 6,
             completedChapters: 6,
@@ -144,9 +144,9 @@ const Subjects = () => {
             name: 'Calculus III',
             icon: '📊',
             color: 'from-violet-500 to-fuchsia-500',
-            bgLight: 'bg-violet-50',
-            textColor: 'text-violet-600',
-            borderColor: 'border-violet-100',
+            bgLight: 'bg-violet-500/10',
+            textColor: 'text-violet-400',
+            borderColor: 'border-violet-500/20',
             progress: 10,
             totalChapters: 10,
             completedChapters: 1,
@@ -180,10 +180,10 @@ const Subjects = () => {
 
     const getStatusBadge = (status) => {
         const styles = {
-            'in-progress': { bg: 'bg-blue-50', text: 'text-blue-600', label: 'In Progress' },
-            'needs-attention': { bg: 'bg-amber-50', text: 'text-amber-600', label: 'Needs Attention' },
-            'almost-done': { bg: 'bg-emerald-50', text: 'text-emerald-600', label: 'Almost Done' },
-            'completed': { bg: 'bg-green-50', text: 'text-green-600', label: 'Completed' },
+            'in-progress': { bg: 'bg-blue-500/10', text: 'text-blue-400', label: 'In Progress' },
+            'needs-attention': { bg: 'bg-amber-500/10', text: 'text-amber-400', label: 'Needs Attention' },
+            'almost-done': { bg: 'bg-emerald-500/10', text: 'text-emerald-400', label: 'Almost Done' },
+            'completed': { bg: 'bg-green-500/10', text: 'text-green-400', label: 'Completed' },
         };
         return styles[status] || styles['in-progress'];
     };
@@ -195,11 +195,10 @@ const Subjects = () => {
     const completedSubjects = subjects.filter(s => s.status === 'completed').length;
 
     return (
-        <div className="min-h-screen bg-brand-light flex font-sans text-text-main">
+        <div className="min-h-screen bg-background flex font-sans text-text-main relative overflow-hidden">
             <Sidebar />
-            <RightPanel />
 
-            <main className="flex-1 ml-64 mr-80 p-8 overflow-y-auto">
+            <main className="flex-1 md:ml-20 main-content right-panel-transition p-8 overflow-y-auto">
                 {/* Header */}
                 <header className="flex justify-between items-center mb-10">
                     <div className="relative w-96">
@@ -209,24 +208,24 @@ const Subjects = () => {
                             placeholder="Search subjects..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full pl-12 pr-4 py-3 bg-white border border-gray-100 rounded-2xl text-text-main focus:outline-none focus:ring-2 focus:ring-brand-primary/20 shadow-sm transition-all"
+                            className="input-field pl-12"
                         />
                     </div>
 
                     <div className="flex items-center gap-6">
                         <button
                             onClick={() => handleFeatureClick('Notifications')}
-                            className="relative p-2 text-text-secondary hover:text-brand-primary transition-colors"
+                            className="relative p-2 text-text-secondary hover:text-primary transition-colors hover:bg-surface-hover rounded-xl shadow-inner border border-transparent hover:border-border/50"
                         >
                             <Bell size={24} />
-                            <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-brand-light"></span>
+                            <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-surface"></span>
                         </button>
-                        <div className="flex items-center gap-3 pl-6 border-l border-gray-200">
+                        <div className="flex items-center gap-3 pl-6 border-l border-border/50">
                             <div className="text-right hidden md:block">
                                 <p className="text-sm font-bold text-text-main">{user?.username || 'Arin GUPTA'}</p>
                                 <p className="text-xs text-text-secondary">Level 1 Scholar</p>
                             </div>
-                            <div className="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center text-brand-primary font-bold cursor-pointer hover:bg-brand-primary/20 transition-all">
+                            <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-bold cursor-pointer hover:bg-primary/20 transition-all">
                                 {user?.username ? user.username[0].toUpperCase() : 'A'}
                             </div>
                         </div>
@@ -241,7 +240,7 @@ const Subjects = () => {
                     </div>
                     <button
                         onClick={() => handleFeatureClick('Add Subject')}
-                        className="flex items-center gap-2 bg-brand-dark text-white px-5 py-3 rounded-xl font-medium shadow-lg hover:bg-gray-800 transition-colors transform hover:-translate-y-0.5"
+                        className="flex items-center gap-2 btn-primary"
                     >
                         <Plus size={18} />
                         Add Subject
@@ -261,11 +260,11 @@ const Subjects = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1 }}
-                            className="bg-white p-6 rounded-2xl shadow-sm border border-gray-50 hover:shadow-md transition-shadow group"
+                            className="card"
                         >
                             <div className="flex justify-between items-start mb-4">
                                 <span className="text-2xl group-hover:scale-110 transition-transform duration-200">{stat.icon}</span>
-                                <span className="text-xs font-bold text-text-secondary bg-gray-50 px-2 py-1 rounded-full">{stat.trend}</span>
+                                <span className="text-xs font-bold text-text-secondary bg-surface-hover px-2 py-1 rounded-md shadow-inner">{stat.trend}</span>
                             </div>
                             <h4 className="text-2xl font-bold text-text-main mb-1">{stat.value}</h4>
                             <p className="text-xs text-text-secondary font-medium">{stat.label}</p>
@@ -280,8 +279,8 @@ const Subjects = () => {
                             key={filter.key}
                             onClick={() => setActiveFilter(filter.key)}
                             className={`px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-200 ${activeFilter === filter.key
-                                ? 'bg-brand-primary text-white shadow-md shadow-brand-primary/20'
-                                : 'bg-white text-text-secondary border border-gray-100 hover:border-brand-primary/30 hover:text-brand-primary'
+                                ? 'bg-primary text-white shadow-glow border-none'
+                                : 'bg-surface text-text-secondary shadow-soft hover:shadow-card hover:text-primary border border-transparent'
                                 }`}
                         >
                             {filter.label}
@@ -304,9 +303,9 @@ const Subjects = () => {
                                     transition={{ delay: i * 0.05 }}
                                     whileHover={{ y: -4 }}
                                     onClick={() => setSelectedSubject(selectedSubject?.id === subject.id ? null : subject)}
-                                    className={`bg-white p-6 rounded-2xl shadow-sm border cursor-pointer transition-all duration-300 ${selectedSubject?.id === subject.id
-                                        ? 'border-brand-primary/40 shadow-lg shadow-brand-primary/10'
-                                        : 'border-gray-50 hover:border-brand-primary/20 hover:shadow-md'
+                                    className={`card p-6 cursor-pointer transition-all duration-300 ${selectedSubject?.id === subject.id
+                                        ? 'shadow-inner border-transparent'
+                                        : 'hover:shadow-float border-transparent'
                                         }`}
                                 >
                                     {/* Card Header */}
@@ -333,7 +332,7 @@ const Subjects = () => {
                                             <span className="text-xs text-text-secondary font-medium">Progress</span>
                                             <span className="text-xs font-bold text-text-main">{subject.progress}%</span>
                                         </div>
-                                        <div className="w-full bg-gray-100 rounded-full h-2">
+                                        <div className="w-full bg-background rounded-full h-2 shadow-inner">
                                             <motion.div
                                                 initial={{ width: 0 }}
                                                 animate={{ width: `${subject.progress}%` }}
@@ -368,16 +367,16 @@ const Subjects = () => {
                                                 transition={{ duration: 0.3 }}
                                                 className="overflow-hidden"
                                             >
-                                                <div className="mt-5 pt-5 border-t border-gray-100 space-y-3">
+                                                <div className="mt-5 pt-5 border-t border-border space-y-3">
                                                     <h4 className="text-xs font-bold text-text-secondary uppercase tracking-wider">Chapters</h4>
                                                     {subject.chapters.map((ch, ci) => (
                                                         <div
                                                             key={ci}
-                                                            className="flex items-center gap-3 p-3 rounded-xl bg-gray-50/80 hover:bg-gray-100/80 transition-colors group/ch"
+                                                            className="flex items-center gap-3 p-3 rounded-xl bg-background shadow-inner hover:bg-surface-hover transition-colors group/ch"
                                                         >
-                                                            <div className={`w-8 h-8 rounded-lg ${ch.progress === 100 ? 'bg-green-100' : subject.bgLight} flex items-center justify-center shrink-0`}>
+                                                            <div className={`w-8 h-8 rounded-lg ${ch.progress === 100 ? 'bg-green-500/20' : subject.bgLight} flex items-center justify-center shrink-0`}>
                                                                 {ch.progress === 100 ? (
-                                                                    <CheckCircle size={14} className="text-green-500" />
+                                                                    <CheckCircle size={14} className="text-green-400" />
                                                                 ) : (
                                                                     <BookOpen size={14} className={subject.textColor} />
                                                                 )}
@@ -387,9 +386,9 @@ const Subjects = () => {
                                                                     <span className="text-xs font-semibold text-text-main truncate">{ch.name}</span>
                                                                     <span className="text-[11px] font-bold text-text-secondary ml-2">{ch.progress}%</span>
                                                                 </div>
-                                                                <div className="w-full bg-gray-200 rounded-full h-1">
+                                                                <div className="w-full bg-background rounded-full h-1 shadow-inner">
                                                                     <div
-                                                                        className={`h-1 rounded-full transition-all ${ch.progress === 100 ? 'bg-green-400' : 'bg-brand-primary'}`}
+                                                                        className={`h-1 rounded-full transition-all ${ch.progress === 100 ? 'bg-green-400' : 'bg-primary'}`}
                                                                         style={{ width: `${ch.progress}%` }}
                                                                     />
                                                                 </div>
@@ -397,7 +396,7 @@ const Subjects = () => {
                                                             <span className="text-[10px] text-text-secondary whitespace-nowrap">
                                                                 {ch.completed}/{ch.tasks} tasks
                                                             </span>
-                                                            <ChevronRight size={14} className="text-gray-300 group-hover/ch:text-brand-primary transition-colors shrink-0" />
+                                                            <ChevronRight size={14} className="text-text-muted group-hover/ch:text-primary transition-colors shrink-0" />
                                                         </div>
                                                     ))}
                                                     <button
@@ -405,7 +404,7 @@ const Subjects = () => {
                                                             e.stopPropagation();
                                                             handleFeatureClick(`Study ${subject.name}`);
                                                         }}
-                                                        className="w-full mt-2 py-2.5 rounded-xl bg-brand-primary/5 text-brand-primary text-sm font-semibold hover:bg-brand-primary/10 transition-colors"
+                                                        className="w-full mt-2 py-2.5 rounded-xl bg-primary/10 text-primary text-sm font-bold hover:bg-primary/20 transition-colors"
                                                     >
                                                         Continue Studying
                                                     </button>
@@ -437,3 +436,4 @@ const Subjects = () => {
 };
 
 export default Subjects;
+

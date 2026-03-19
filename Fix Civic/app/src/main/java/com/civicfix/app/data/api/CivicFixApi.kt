@@ -17,6 +17,12 @@ interface CivicFixApi {
     @POST("api/v1/auth/firebase-login")
     suspend fun firebaseLogin(@Body request: FirebaseLoginRequest): TokenResponse
 
+    @POST("api/v1/auth/request-otp")
+    suspend fun requestOtp(@Body request: OTPRequest): OTPRequestResponse
+
+    @POST("api/v1/auth/verify-otp")
+    suspend fun verifyOtp(@Body request: OTPVerifyRequest): TokenResponse
+
     @GET("api/v1/auth/me")
     suspend fun getMe(@Header("Authorization") token: String): UserResponse
 

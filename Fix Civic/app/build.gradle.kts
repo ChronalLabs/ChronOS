@@ -36,8 +36,8 @@ android {
         manifestPlaceholders["MAPS_API_KEY"] = mapsApiKey
 
         // Backend URLs - Dynamically selected by RetrofitClient
-        buildConfigField("String", "EMULATOR_API_BASE_URL", "\"http://10.0.2.2:8000\"")
-        buildConfigField("String", "DEVICE_API_BASE_URL", "\"http://127.0.0.1:8000\"")
+        buildConfigField("String", "EMULATOR_API_BASE_URL", "\"http://10.0.2.2:8001\"")
+        buildConfigField("String", "DEVICE_API_BASE_URL", "\"http://127.0.0.1:8001\"")
     }
 
     buildTypes {
@@ -118,6 +118,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-storage")
+    implementation("com.google.android.gms:play-services-auth:21.1.1")
 
     // Coroutines support for Firebase Tasks (.await())
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")

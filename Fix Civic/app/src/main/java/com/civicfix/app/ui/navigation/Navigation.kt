@@ -24,6 +24,9 @@ sealed class Screen(val route: String) {
     object History : Screen("history")
     object Profile : Screen("profile")
     object Settings : Screen("settings")
+    object About : Screen("about")
+    object HelpSupport : Screen("help_support")
+    object PrivacyPolicy : Screen("privacy_policy")
     object ReportDetail : Screen("report_detail/{reportId}") {
         fun createRoute(reportId: String) = "report_detail/$reportId"
     }
@@ -116,6 +119,15 @@ fun CivicFixNavHost() {
                 },
                 onSettingsClick = {
                     navController.navigate(Screen.Settings.route)
+                },
+                onAboutClick = {
+                    navController.navigate(Screen.About.route)
+                },
+                onHelpClick = {
+                    navController.navigate(Screen.HelpSupport.route)
+                },
+                onPrivacyClick = {
+                    navController.navigate(Screen.PrivacyPolicy.route)
                 }
             )
         }
@@ -123,6 +135,24 @@ fun CivicFixNavHost() {
         composable(Screen.Settings.route) {
             com.civicfix.app.ui.screens.SettingsScreen(
                 token = token,
+                onBack = { navController.popBackStack() }
+            )
+        }
+
+        composable(Screen.About.route) {
+            com.civicfix.app.ui.screens.AboutScreen(
+                onBack = { navController.popBackStack() }
+            )
+        }
+
+        composable(Screen.HelpSupport.route) {
+            com.civicfix.app.ui.screens.HelpSupportScreen(
+                onBack = { navController.popBackStack() }
+            )
+        }
+
+        composable(Screen.PrivacyPolicy.route) {
+            com.civicfix.app.ui.screens.PrivacyPolicyScreen(
                 onBack = { navController.popBackStack() }
             )
         }

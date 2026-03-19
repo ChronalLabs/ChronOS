@@ -62,3 +62,95 @@ def generate_tweet_text(
         tweet = tweet[:277] + "..."
 
     return tweet
+
+
+# --- Gwalior area-to-authority mapping ---
+GWALIOR_AUTHORITY_MAP = {
+    "lashkar": "@GwaliorMC",
+    "morar": "@GwaliorMC",
+    "thatipur": "@GwaliorMC",
+    "city center": "@GwaliorMC",
+    "hazira": "@GwaliorMC",
+    "bahodapur": "@GwaliorMC",
+    "dabra": "@DabraMC",
+    "gird": "@GwaliorMC",
+    "phool bagh": "@GwaliorMC",
+    "jayendraganj": "@GwaliorMC",
+    "kampoo": "@GwaliorMC",
+    "padav": "@GwaliorMC",
+    "birla nagar": "@GwaliorMC",
+    "university": "@GwaliorMC",
+}
+DEFAULT_AUTHORITY = "@GwaliorMC"
+
+
+def get_authority_tag(address: str) -> str:
+    """Get the relevant authority X handle based on the area in the address."""
+    if not address:
+        return DEFAULT_AUTHORITY
+    address_lower = address.lower()
+    for area, handle in GWALIOR_AUTHORITY_MAP.items():
+        if area in address_lower:
+            return handle
+    return DEFAULT_AUTHORITY
+
+
+def generate_resolved_tweet_text(
+    issue_type: str,
+    address: str,
+    user_twitter_handle: str | None = None,
+    authority_tag: str | None = None,
+) -> str:
+    """Generate a tweet for a resolved report with user and authority tags."""
+    if not authority_tag:
+        authority_tag = get_authority_tag(address)
+
+    location = address[:80] if address else "Gwalior"
+
+    user_mention = f"\n{user_twitter_handle}" if user_twitter_handle else ""
+
+    tweet = (
+        f"✅ Issue Resolved!\n\n"
+        f"📍 Location: {location}\n"
+        f"📝 The reported {issue_type.lower()} has been successfully resolved.\n\n"
+        f"Thanks for reporting 🙏"
+        f"{user_mention} {authority_tag} #CivicFix #Gwalior"
+    )
+
+    # Ensure tweet fits limit
+    if len(tweet) > 280:
+        tweet = tweet[:277] + "..."
+
+    return tweet
+
+
+def generate_declined_tweet_text(
+    issue_type: str,
+    address: str,
+    decline_reason: str = "Invalid report",
+    user_twitter_handle: str | None = None,
+    authority_tag: str | None = None,
+) -> str:
+    """Generate a tweet for a declined/fake report with user and authority tags."""
+    if not authority_tag:
+        authority_tag = get_authority_tag(address)
+
+    location = address[:80] if address else "Gwalior"
+
+    user_mention = f"\n{user_twitter_handle}" if user_twitter_handle else ""
+
+    tweet = (
+        f"❌ Report Declined\n\n"
+        f"📍 Location: {location}\n"
+        f"📝 This report has been marked as fake / invalid.\n\n"
+        f"Reason: {decline_reason}\n"
+        f"Thanks for helping keep CivicFix clean 🙏"
+        f"{user_mention} {authority_tag} #CivicFix #Gwalior"
+    )
+
+    # Ensure tweet fits limit
+    if len(tweet) > 280:
+        tweet = tweet[:277] + "..."
+
+    return tweet
+

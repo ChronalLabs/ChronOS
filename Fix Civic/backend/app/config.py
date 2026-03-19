@@ -39,6 +39,12 @@ class Settings(BaseSettings):
     JWT_ALGORITHM: str = "HS256"
     JWT_EXPIRATION_MINUTES: int = 1440
 
+    # SMTP Settings
+    SMTP_SERVER: str = "smtp.gmail.com"
+    SMTP_PORT: int = 587
+    SMTP_USERNAME: Optional[str] = None
+    SMTP_PASSWORD: Optional[str] = None
+
     # App
     MOCK_MODE: bool = True
     ALLOWED_ORIGINS: str = "http://localhost:5173,http://localhost:3000"

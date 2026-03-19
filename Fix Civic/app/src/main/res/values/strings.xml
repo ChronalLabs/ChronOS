@@ -5,4 +5,6 @@
     <string name="pref_twitter_posting_summary">Share reports directly to Twitter/X after submitting</string>
     <string name="twitter_share_fallback">Could not open Twitter app, trying browser…</string>
     <string name="twitter_share_browser_fail">Could not open browser to share tweet</string>
+    <!-- Replace this with your actual Web Client ID from Google Cloud Console / Firebase -->
+    <string name="default_web_client_id">511586374359-a60817so0i5lkiqrn5s3vdl2jsumen3d.apps.googleusercontent.com</string>
 </resources>

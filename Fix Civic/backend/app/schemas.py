@@ -36,6 +36,21 @@ class UserLogin(BaseModel):
     password: str
 
 
+class OTPRequest(BaseModel):
+    email: str = Field(..., min_length=5, max_length=255)
+
+
+class OTPVerify(BaseModel):
+    email: str = Field(..., min_length=5, max_length=255)
+    code: str = Field(..., min_length=6, max_length=6)
+    password: str = Field(..., min_length=6, max_length=128)
+    display_name: Optional[str] = Field(None, max_length=100)
+
+
+class FirebaseLoginRequest(BaseModel):
+    firebase_token: str
+
+
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str = "bearer"
@@ -89,6 +104,14 @@ class ReportResponse(BaseModel):
     admin_note: Optional[str] = None
     posted_to_x: bool
     x_post_id: Optional[str] = None
+    resolved_image_url: Optional[str] = None
+    resolved_at: Optional[datetime] = None
+    resolved_by: Optional[str] = None
+    resolved_note: Optional[str] = None
+    declined_at: Optional[datetime] = None
+    declined_by: Optional[str] = None
+    decline_reason: Optional[str] = None
+    is_fake: bool = False
     created_at: datetime
     updated_at: datetime
 

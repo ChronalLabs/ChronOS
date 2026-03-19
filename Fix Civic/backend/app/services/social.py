@@ -1,4 +1,4 @@
-()"""
+"""
 CivicFix - Social Posting Service (X / Twitter)
 Posts reports to X with retry/backoff. Simulates if keys missing.
 """

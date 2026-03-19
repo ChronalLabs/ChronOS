@@ -4,8 +4,9 @@ Core API endpoints for report CRUD and social posting
 """
 import logging
 from typing import Optional
-from datetime import datetime
+from datetime import datetime, timezone
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Form, Query
+from fastapi.responses import JSONResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, func, desc
 from app.database import get_db
@@ -19,7 +20,7 @@ from app.middleware.rate_limit import check_rate_limit
 from app.services.storage import upload_image, validate_image
 from app.services.geocoding import reverse_geocode
 from app.services.social import post_to_x
-from app.services.complaint import generate_complaint_text, generate_tweet_text
+from app.services.complaint import generate_complaint_text, generate_tweet_text, generate_resolved_tweet_text, generate_declined_tweet_text
 from app.routers.settings import is_auto_post_enabled
 from app.utils.audit import log_action
 
@@ -314,3 +315,113 @@ async def post_report_to_x(
     )
 
     return PostToXResponse(**x_result)
+
+
+@router.post("/reports/{report_id}/resolve")
+async def resolve_report(
+    report_id: str,
+    image: UploadFile = File(...),
+    resolved_note: Optional[str] = Form(None),
+    db: AsyncSession = Depends(get_db),
+    admin: User = Depends(require_admin),
+):
+    """
+    Admin: resolve a report with a resolution photo.
+    Uploads the resolution image, marks the report as resolved,
+    and generates a resolved tweet text for the admin to post.
+    """
+    result = await db.execute(select(Report).where(Report.id == report_id))
+    report = result.scalar_one_or_none()
+
+    if not report:
+        raise HTTPException(404, "Report not found")
+
+    # Validate & upload resolution image
+    file_bytes = await image.read()
+    validation_error = await validate_image(
+        image.content_type or "", len(file_bytes), image.filename or "upload.jpg"
+    )
+    if validation_error:
+        raise HTTPException(400, validation_error)
+
+    storage_result = await upload_image(file_bytes, image.filename or "resolved.jpg")
+
+    # Update report
+    report.status = "resolved"
+    report.resolved_image_url = storage_result["image_url"]
+    report.resolved_at = datetime.now(timezone.utc)
+    report.resolved_by = admin.email
+    if resolved_note:
+        report.resolved_note = resolved_note
+        report.admin_note = resolved_note  # Also update admin_note for consistency
+
+    await db.flush()
+
+    # Audit log
+    await log_action(
+        db, "report_resolved", actor=admin.email,
+        report_id=report_id, note=f"Resolved with image: {storage_result['image_url']}"
+    )
+    logger.info(f"Report {report_id} resolved by {admin.email}")
+
+    # Generate resolved tweet text
+    resolved_tweet = generate_resolved_tweet_text(
+        issue_type=report.issue_type,
+        address=report.address or "",
+        user_twitter_handle=None,  # Can be extended later
+    )
+
+    return JSONResponse(content={
+        "report": ReportResponse.model_validate(report).model_dump(mode="json"),
+        "resolved_tweet": resolved_tweet,
+        "message": "Report resolved successfully",
+    })
+
+
+@router.post("/reports/{report_id}/decline")
+async def decline_report(
+    report_id: str,
+    decline_reason: str = Form("Fake report"),
+    db: AsyncSession = Depends(get_db),
+    admin: User = Depends(require_admin),
+):
+    """
+    Admin: decline a report and mark it as fake/invalid.
+    Generates a declined tweet text for the admin to post.
+    """
+    result = await db.execute(select(Report).where(Report.id == report_id))
+    report = result.scalar_one_or_none()
+
+    if not report:
+        raise HTTPException(404, "Report not found")
+
+    # Update report
+    report.status = "declined"
+    report.is_fake = True
+    report.declined_at = datetime.now(timezone.utc)
+    report.declined_by = admin.email
+    report.decline_reason = decline_reason
+    report.admin_note = f"Declined: {decline_reason}"
+
+    await db.flush()
+
+    # Audit log
+    await log_action(
+        db, "report_declined", actor=admin.email,
+        report_id=report_id, note=f"Declined: {decline_reason}"
+    )
+    logger.info(f"Report {report_id} declined by {admin.email}: {decline_reason}")
+
+    # Generate declined tweet text
+    declined_tweet = generate_declined_tweet_text(
+        issue_type=report.issue_type,
+        address=report.address or "",
+        decline_reason=decline_reason,
+        user_twitter_handle=None,
+    )
+
+    return JSONResponse(content={
+        "report": ReportResponse.model_validate(report).model_dump(mode="json"),
+        "declined_tweet": declined_tweet,
+        "message": "Report declined successfully",
+    })

@@ -56,6 +56,22 @@ export const postToX = async (id) => {
     return data;
 };
 
+export const resolveReport = async (id, formData) => {
+    const { data } = await client.post(`/api/v1/reports/${id}/resolve`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+    });
+    return data;
+};
+
+export const declineReport = async (id, declineReason) => {
+    const formData = new FormData();
+    formData.append('decline_reason', declineReason);
+    const { data } = await client.post(`/api/v1/reports/${id}/decline`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+    });
+    return data;
+};
+
 // --- Health ---
 export const checkHealth = async () => {
     const { data } = await client.get('/api/v1/health');

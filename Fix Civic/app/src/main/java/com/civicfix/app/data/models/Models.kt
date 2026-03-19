@@ -18,6 +18,22 @@ data class FirebaseLoginRequest(
     @SerializedName("firebase_token") val firebaseToken: String
 )
 
+data class OTPRequest(
+    val email: String
+)
+
+data class OTPVerifyRequest(
+    val email: String,
+    val code: String,
+    val password: String,
+    @SerializedName("display_name") val displayName: String? = null
+)
+
+data class OTPRequestResponse(
+    val message: String,
+    @SerializedName("expires_in") val expiresIn: Int
+)
+
 data class TokenResponse(
     @SerializedName("access_token") val accessToken: String,
     @SerializedName("token_type") val tokenType: String,

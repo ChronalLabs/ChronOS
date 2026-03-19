@@ -95,9 +95,16 @@ class LocationPickerActivity : ComponentActivity() {
                         // Try to get user's current location
                         fetchCurrentLocation { userLat, userLon ->
                             val latLng = LatLng(userLat, userLon)
+                            selectedLatLng = latLng
                             cameraPositionState = CameraPositionState(
                                 CameraPosition.fromLatLngZoom(latLng, 15f)
                             )
+                            coroutineScope.launch(Dispatchers.IO) {
+                                val addr = getAddress(userLat, userLon)
+                                withContext(Dispatchers.Main) {
+                                    selectedAddress = addr
+                                }
+                            }
                         }
                     }
                 }
@@ -166,6 +173,15 @@ class LocationPickerActivity : ComponentActivity() {
                                         val addr = getAddress(latLng.latitude, latLng.longitude)
                                         withContext(Dispatchers.Main) {
                                             selectedAddress = addr
+                                        }
+                                    }
+                                },
+                                onPOIClick = { poi ->
+                                    selectedLatLng = poi.latLng
+                                    coroutineScope.launch(Dispatchers.IO) {
+                                        val addr = getAddress(poi.latLng.latitude, poi.latLng.longitude)
+                                        withContext(Dispatchers.Main) {
+                                            selectedAddress = poi.name + " - " + addr
                                         }
                                     }
                                 }
